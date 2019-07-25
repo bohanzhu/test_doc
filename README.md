@@ -6,13 +6,21 @@ Generate descriptive metadata for digitized historical images. The project is fu
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-## Modules
-* Inference
-* Pretrained Models
-* Training
-* Evaluation
-* Data Preparasion
 
+## Contents
+* [Prerequisites](#Prerequisites)
+    * [Introduction](#introduction)
+    * [Architecture](#architecture)
+* [Getting Started](#getting-started)
+    * [Installing](#Installing)
+    * [Test Installation](#Test Installation)
+* [Pretrained Models](#Pretrained Models)
+* [Prepare you Data](#Data Preparasion)
+* [Training a Model](#training-a-model)
+    * [Initial Training](#initial-training)
+    * [Fine Tune the Inception v3 Model](#fine-tune-the-inception-v3-model)
+* [Inference](#Inference)
+* [Evaluate your model](#Evaluation)
 
 ### Prerequisites
 
@@ -40,7 +48,7 @@ Run
 ```
 vagrant up
 ```
-test installation
+## Test Installation
 Run following scripts to test packages installation
 ```
 python -c 'import tensorflow as tf; print(tf.__version__)'

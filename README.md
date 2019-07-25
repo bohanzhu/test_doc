@@ -1,6 +1,6 @@
-# Project Title
+# Sheeko Project
 
-One Paragraph of project description goes here
+Generate descriptive metadata for digitized historical images. The project is funded through the LYRASIS Catalyst grant.
 
 ## Getting Started
 

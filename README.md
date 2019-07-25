@@ -20,17 +20,21 @@ A step by step series of examples that tell you how to get a development env run
 
 Say what the step will be
 
-```
-Give the example
-```
+For Linux OS system
 
-And repeat
-
+For Windows or other OS
+Run
 ```
-until finished
+vagrant up
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
+test installation
+Run following scripts to test packages installation
+```
+python -c 'import tensorflow as tf; print(tf.__version__)'
+```
+```
+python -c 'import nltk; print(nltk.__version__)'
+```
 
 ## Running the tests
 

@@ -11,7 +11,8 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+Recommened Ubuntu 16.04.6 LTS OS
+Other OS are supported
 ```
 
 ### Installing
@@ -21,6 +22,10 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 For Linux OS system
+Run script under project root directory
+```
+bash installation.sh
+```
 
 For Windows or other OS
 Run

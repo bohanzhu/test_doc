@@ -6,6 +6,14 @@ Generate descriptive metadata for digitized historical images. The project is fu
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+## Modules
+* Inference
+* Pretrained Models
+* Training
+* Evaluation
+* Data Preparasion
+
+
 ### Prerequisites
 
 What things you need to install the software and how to install them
@@ -43,7 +51,7 @@ python -c 'import nltk; print(nltk.__version__)'
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Model
 
 ### Break down into end to end tests
 

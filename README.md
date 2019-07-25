@@ -2,16 +2,12 @@
 
 Generate descriptive metadata for digitized historical images. The project is funded through the LYRASIS Catalyst grant.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-
 ## Contents
-* [Prerequisites](#Prerequisites)
+* [Project Overview](#Project-OverView)
     * [Introduction](#introduction)
     * [Architecture](#architecture)
 * [Getting Started](#getting-started)
+    * [Prerequisites](#Prerequisites)
     * [Installing](#Installing)
     * [Test Installation](#Test-Installation)
 * [Pretrained Models](#Pretrained-Models)
@@ -22,13 +18,19 @@ These instructions will get you a copy of the project up and running on your loc
 * [Inference](#Inference)
 * [Evaluate your model](#Evaluation)
 
+## Project Overview
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
 ### Prerequisites
 
 What things you need to install the software and how to install them
 
 ```
 Recommened Ubuntu 16.04.6 LTS OS
-Other OS are supported
+Other OS are supported with virtualbox installed and vt-x option enabled in BIOS mode
 ```
 
 ### Installing
@@ -60,6 +62,8 @@ python -c 'import nltk; print(nltk.__version__)'
 ## Running the tests
 
 Model
+
+
 
 ### Break down into end to end tests
 

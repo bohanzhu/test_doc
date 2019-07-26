@@ -20,7 +20,7 @@ Generate descriptive metadata for digitized historical images. The project is fu
 
 ## Project Overview
 ### Inference Example
-![](test_image/demo1.jpg)
+![](demo1.jpg)
 Caption: 
   ```
   0) a large building with a clock tower on top . (p=0.000486)

@@ -63,8 +63,9 @@ What things you need to install the software and how to install them
 ```
 To enable GPU accleration for training and evaluation, it's recommened to run the code in Ubuntu 16.04.6 LTS OS environment
 
-Other OS are supported with virtualbox installed and vt-x option enabled in BIOS mode. Please be aware that there is limitation for GPU allocation in VirtualBox environment. So It's not recommended to run either training or evaluation script in VirtualBox. Alternatively, please migrate the installation.sh, train, evaluation and library directories to local machine for the purpose. 
+Other OS are supported with virtualbox installed and vt-x option enabled in BIOS mode. Please be aware that there is limitation for GPU allocation in VirtualBox environment. So It's not recommended to run either training or evaluation script in VirtualBox. 
 
+Alternatively, please migrate the installation.sh, train, evaluation and library directories to local machine for the purpose. 
 Run "bash installation.sh" under project root directory to install prerequisites packages before running training or evaluation scripts
 ```
 

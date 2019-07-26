@@ -70,11 +70,6 @@ Run "bash installation.sh" under project root directory to install prerequisites
 ```
 
 ### Installation
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
 For Linux OS system
 Run script under project root directory
 ```
@@ -96,10 +91,7 @@ python -c 'import nltk; print(nltk.__version__)'
 ```
 
 ## Running the tests
-
 Model
-
-
 
 ### Break down into end to end tests
 

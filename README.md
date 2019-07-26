@@ -16,6 +16,9 @@ Generate descriptive metadata for digitized historical images. The project is fu
     * [Initial Training](#initial-training)
     * [Fine Tune the Inception v3 Model](#fine-tune-the-inception-v3-model)
 * [Inference](#Inference)
+    * [Image Caption](#Image-Caption)
+    * [Image Classification](#Image-Classification)
+    * [Object Detection](#Object-Detection)
 * [Evaluate your model](#Evaluation)
 
 ## Project Overview

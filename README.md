@@ -28,7 +28,16 @@ Caption:
   2) a street scene with focus on a train track . (p=0.000010)
   ```
 
-Label: Tree, Street light, Pole
+Label: 
+```
+worm fence, snake fence, snake-rail fence, Virginia fence (score = 0.11539)
+patio, terrace (score = 0.06765)
+planetarium (score = 0.06152)
+flagpole, flagstaff (score = 0.04749)
+picket fence, paling (score = 0.04370)
+
+[{'score': '0.8693373', 'label_text': u'Tree'}]
+```
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.

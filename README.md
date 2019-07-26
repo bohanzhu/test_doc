@@ -8,7 +8,7 @@ Generate descriptive metadata for digitized historical images. The project is fu
     * [Architecture](#architecture)
 * [Getting Started](#getting-started)
     * [Prerequisites](#Prerequisites)
-    * [Installing](#Installing)
+    * [Installation](#Installation)
     * [Test Installation](#Test-Installation)
     * [What's Included in the Package](#What's-Included-in-the-Package)
 * [Pretrained Models](#Pretrained-Models)
@@ -30,7 +30,7 @@ Generate descriptive metadata for digitized historical images. The project is fu
     * [Image Caption](#Image-Caption)
     * [Image Classification](#Image-Classification)
     * [Object Detection](#Object-Detection)
-* [Evaluate your model](#Evaluation)
+* [Evaluate your Caption Model](#Evaluation-Caption-Model)
 
 ## Project Overview
 ### Inference Example
@@ -65,7 +65,7 @@ Recommened Ubuntu 16.04.6 LTS OS
 Other OS are supported with virtualbox installed and vt-x option enabled in BIOS mode
 ```
 
-### Installing
+### Installation
 
 A step by step series of examples that tell you how to get a development env running
 

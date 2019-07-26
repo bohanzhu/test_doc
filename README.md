@@ -19,7 +19,11 @@ Generate descriptive metadata for digitized historical images. The project is fu
 * [Evaluate your model](#Evaluation)
 
 ## Project Overview
+### Inference Example
 
+Caption: "a black and white photo of a street sign"
+
+Label: Tree, Street light, Pole
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.

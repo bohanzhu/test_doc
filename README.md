@@ -20,12 +20,12 @@ Generate descriptive metadata for digitized historical images. The project is fu
 
 ## Project Overview
 ### Inference Example
-![](demo1.jpg)
+![](demo4.jpg)
 Caption: 
   ```
-  0) a large building with a clock tower on top . (p=0.000486)
-  1) a large building with a clock tower in the middle . (p=0.000378)
-  2) a large building with a clock tower in the middle of it . (p=0.000202)
+  0) a street sign on a pole on a street (p=0.000016)
+  1) a street sign on a pole on a city street (p=0.000013)
+  2) a street scene with focus on a train track . (p=0.000010)
   ```
 
 Label: Tree, Street light, Pole

@@ -34,7 +34,7 @@ Generate descriptive metadata for digitized historical images. The project is fu
 
 ## Project Overview
 ### Inference Example
-![](demo4.jpg)
+![](demo4.jpg | width=250)
 Caption: 
   ```
   0) a street sign on a pole on a street (p=0.000016)

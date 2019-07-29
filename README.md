@@ -39,6 +39,7 @@ This project provides deployable machine learning environment including pre-trai
 ### Introduction
 
 Inference Example for given image
+
 <img src="demo4.jpg" height="240" width="480">
 
 Caption: 

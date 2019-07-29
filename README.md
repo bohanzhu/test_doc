@@ -1,6 +1,6 @@
 # Sheeko Project
 
-Generate descriptive metadata for digitized historical images. The project is funded through the LYRASIS Catalyst grant.
+Machine learning implementation package to generate descriptive metadata for digitized historical images. The project is funded through the LYRASIS Catalyst grant.
 
 ## Contents
 * [Project Overview](#Project-OverView)
@@ -34,10 +34,10 @@ Generate descriptive metadata for digitized historical images. The project is fu
 
 ## Project Overview
 
-TBD
+The project provided deployable machine learning environment including pre-trained models and code packages for training, inference and evaluation for generating caption metadata. Additional inference code for label generating are also included in this package
 
 ### Introduction
-TBD
+
 Inference Example
 <img src="demo4.jpg" height="240" width="480">
 

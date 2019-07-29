@@ -57,8 +57,6 @@ Tree
 
 This code package is the customization of Im2txt. Please see https://github.com/tensorflow/models/tree/master/research/im2txt for more details about im2txt
 
-Tensorflow
-NLTK
 Architecture of Caption generating model in this project is ["Show and Tell model"](http://arxiv.org/abs/1609.06647) which is an encoder-decoder neural network.
 
 
@@ -72,7 +70,18 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-GPU version
+<p>Required Packages</p>
+<p>Python 2.7</p>
+<p>Tensorflow (For GPU version, please see https://www.tensorflow.org/install/gpu to install cuda related packages)</p>
+<p>Natural Language Toolkit (NLTK)</p>
+<p>spaCy</p>
+
+<p>For GPU acceleration</p>
+<p>Ubuntu 16.04.6 LTS OS environment</p>
+<p>NVIDIA GPU</p>
+
+
+### Installation
 
 ```
 To enable GPU accleration for training and evaluation, it's recommened to run the code in Ubuntu 16.04.6 LTS OS environment
@@ -83,7 +92,6 @@ Alternatively, please migrate the installation.sh, train, evaluation and library
 Run "bash installation.sh" under project root directory to install prerequisites packages before running training or evaluation scripts
 ```
 
-### Installation
 For Linux OS system
 Run script under project root directory
 ```

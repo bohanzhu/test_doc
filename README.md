@@ -34,11 +34,11 @@ Machine learning implementation package to generate descriptive metadata for dig
 
 ## Project Overview
 
-The project provided deployable machine learning environment including pre-trained models and code packages for training, inference and evaluation for generating caption metadata. Additional inference code for label generating are also included in this package
+This project provides deployable machine learning environment including pre-trained models and code packages for training, inference and evaluation for generating caption metadata. Inference codes for label generating (classification, object detect) are also included in this project.
 
 ### Introduction
 
-Inference Example
+Inference Example for given image
 <img src="demo4.jpg" height="240" width="480">
 
 Caption: 
@@ -54,7 +54,16 @@ Tree
 ```
 ### Architecture
 
-TBD
+This code package is the customization of Im2txt. Please see https://github.com/tensorflow/models/tree/master/research/im2txt for more details about im2txt
+
+Tensorflow
+NLTK
+Architecture of Caption generating model in this project is ["Show and Tell model"](http://arxiv.org/abs/1609.06647) which is an encoder-decoder neural network.
+
+
+<p align="center"><img src="show_and_tell.JPG" height="300" width="650"> </p>
+
+
 
 ## Getting Started
 

@@ -33,33 +33,36 @@ Generate descriptive metadata for digitized historical images. The project is fu
 * [Evaluate your Caption Model](#Evaluation-Caption-Model)
 
 ## Project Overview
-### Inference Example
+
+TBD
+
+### Introduction
+TBD
+Inference Example
 <img src="demo4.jpg" height="240" width="480">
 
 Caption: 
   ```
-  0) a street sign on a pole on a street (p=0.000016)
-  1) a street sign on a pole on a city street (p=0.000013)
-  2) a street scene with focus on a train track . (p=0.000010)
+  a street sign on a pole on a street (p=0.000016)
   ```
 
 Label: 
 ```
-worm fence, snake fence, snake-rail fence, Virginia fence (score = 0.11539)
-patio, terrace (score = 0.06765)
-planetarium (score = 0.06152)
-flagpole, flagstaff (score = 0.04749)
-picket fence, paling (score = 0.04370)
-
-[{'score': '0.8693373', 'label_text': u'Tree'}]
+worm fence, snake fence, snake-rail fence, Virginia fence
+patio, terrace
+Tree
 ```
+### Architecture
+
+TBD
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+GPU version
 
 ```
 To enable GPU accleration for training and evaluation, it's recommened to run the code in Ubuntu 16.04.6 LTS OS environment

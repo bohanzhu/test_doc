@@ -83,6 +83,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installation
 
+For Windows
 ```
 To enable GPU accleration for training and evaluation, it's recommened to run the code in Ubuntu 16.04.6 LTS OS environment
 

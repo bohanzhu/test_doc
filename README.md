@@ -77,13 +77,17 @@ These instructions will get you a copy of the project up and running on your loc
 <p>spaCy</p>
 
 <p>For GPU acceleration</p>
-<p>Ubuntu 16.04.6 LTS OS environment</p>
+<p>Ubuntu 16.04.6 LTS OS environment or Windows OS</p>
 <p>NVIDIA GPU</p>
 
 
 ### Installation
+Run the script to see python version. Make sure you have python 2 installed
+```
+python -V
+```
 
-For Windows
+For Windows OS
 ```
 To enable GPU accleration for training and evaluation, it's recommened to run the code in Ubuntu 16.04.6 LTS OS environment
 
@@ -93,7 +97,7 @@ Alternatively, please migrate the installation.sh, train, evaluation and library
 Run "bash installation.sh" under project root directory to install prerequisites packages before running training or evaluation scripts
 ```
 
-For Linux OS system
+For Linux OS
 Run script under project root directory
 ```
 bash installation.sh

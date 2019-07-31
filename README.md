@@ -12,7 +12,7 @@ Machine learning implementation package to generate descriptive metadata for dig
     * [Test Installation](#Test-Installation)
     * [What's Included in the Package](#Modules)
 * [Pretrained Models](#Pretrained-Models)
-    * [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/)  
+    * [Sheeko Pretrained Models Resource](#Sheeko-Pretrained-Models-Resource)  
 * [Prepare you Data](#Data-Preparasion)
     * [Clean your data](#Clean-Data)
     * [Build your data](#Build-Data)
@@ -128,19 +128,25 @@ python -c 'import nltk; print(nltk.__version__)'
 ```
 
 ### Modules
-Inference Module
 
-inference script
+<p><b>Inference</b></p>
 
-training script for image caption
+<p><b>Training</b></p>
 
-data converting script
+<p><b>Evaluation</b></p>
 
-evaluation script  image caption
+<p><b>Data Preparation</b></p>
 
-nlp script for image caption
+## Sheeko Pretrained Models Resource
+This project provides [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/) for generating captions.
+You could also get your own models by following the walkthrough. 
+<ul>
+   <li>[Prepare you Data](#Data-Preparasion)</li>
+   <li>[Training a Model](#training-a-model)</li>
+   <li>[Inference](#Inference)</li>
+   <li>[Evaluate your Caption Model](#Evaluation-Caption-Model)</li>
+</ul>
 
-data format script for image caption
 
 ## Running the tests
 Model

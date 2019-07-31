@@ -143,6 +143,11 @@ To demo the Inference for pretrained models, Please go to [Inference](#Inference
 To train your own model for generating caption, Please start with [Data Preparation](#Data-Preparation) 
 ## Data Preparation
 
+## Training
+
+## Evaluation
+
+## Inference
 
 ## Sheeko Pretrained Models Resource
 This project provides [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/) for generating captions.
@@ -153,30 +158,6 @@ You could also get your own models by following the [walkthrough section](#Walkt
    <li>[Inference](#Inference)</li>
    <li>[Evaluate your Caption Model](#Evaluation-Caption-Model)</li>
 </ul>
-
-
-## Running the tests
-Model
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
@@ -207,14 +188,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
-
-
-
-
-installation
-vagrant 
-linux
-
-test demo
-5 images
-

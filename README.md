@@ -10,21 +10,21 @@ Machine learning implementation package to generate descriptive metadata for dig
     * [Prerequisites](#Prerequisites)
     * [Installation](#Installation)
     * [Test Installation](#Test-Installation)
-* [What's Included in the Package](#Modules)
-   * [Prepare you Data](#Data-Preparasion)
+* [Walkthrough](#Walkthrough)
+* [Prepare you Data](#Data-Preparasion)
     * [Clean your data](#Clean-Data)
     * [Build your data](#Build-Data)
     * [Build TF Records](#Build-TF-Records)
-   * [Training a Model](#training-a-model)
+* [Training a Model](#training-a-model)
     * [Initial Training For Caption Model](#initial-training)
     * [Fine Tune Caption Model With Pretrained Model](#fine-tune-the-im2txt-model)
-   * [Inference](#Inference)
+* [Inference](#Inference)
     * [Image Caption](#Image-Caption)
     * [Image Classification](#Image-Classification)
     * [Object Detection](#Object-Detection)
     * [Evaluate your Caption Model](#Evaluation-Caption-Model)
-* [Pretrained Models](#Pretrained-Models)
-    * [Sheeko Pretrained Models Resource](#Sheeko-Pretrained-Models-Resource)  
+* [Pretrained Models](#Sheeko-Pretrained-Models-Resource)
+
 
 
 ## Project Overview
@@ -128,7 +128,7 @@ python -c 'import tensorflow as tf; print(tf.__version__)'
 python -c 'import nltk; print(nltk.__version__)'
 ```
 
-### Modules
+### Walkthrough
 
 <p><b>Inference</b></p>
 

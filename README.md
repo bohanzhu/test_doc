@@ -57,18 +57,13 @@ Tree
 
 This code package is the customization of Im2txt. Please see https://github.com/tensorflow/models/tree/master/research/im2txt for more details about im2txt
 
-####Tool 
-TensorFlow
-
-Bazel
-
-NumPy
-
-NLTK
-
-Python
-
-spaCy
+* Tool
+    * TensorFlow
+    * Bazel
+    * Numpy
+    * NLTK
+    * Python
+    * spaCy
 
 Architecture of Caption generating model in this project is ["Show and Tell model"](http://arxiv.org/abs/1609.06647) which is an encoder-decoder neural network.
 

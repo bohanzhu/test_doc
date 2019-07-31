@@ -71,10 +71,10 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 <p><b>Required Packages</b></p>
-*<p>Python 2.7</p>
-*<p>Tensorflow (For GPU version, please see https://www.tensorflow.org/install/gpu to install cuda related packages)</p>
-*<p>Natural Language Toolkit (NLTK)</p>
-*<p>spaCy</p>
+* <p>Python 2.7</p>
+* <p>Tensorflow (For GPU version, please see https://www.tensorflow.org/install/gpu to install cuda related packages)</p>
+* <p>Natural Language Toolkit (NLTK)</p>
+* <p>spaCy</p>
 
 <p><b>For GPU acceleration</b></p>
 <p>Ubuntu 16.04.6 LTS OS environment or Windows OS</p>

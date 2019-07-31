@@ -18,11 +18,11 @@ Machine learning implementation package to generate descriptive metadata for dig
 * [Training a Model](#training-a-model)
     * [Initial Training For Caption Model](#initial-training)
     * [Fine Tune Caption Model With Pretrained Model](#fine-tune-the-im2txt-model)
+* [Evaluate your Caption Model](#Evaluation-Caption-Model)
 * [Inference](#Inference)
     * [Image Caption](#Image-Caption)
     * [Image Classification](#Image-Classification)
     * [Object Detection](#Object-Detection)
-    * [Evaluate your Caption Model](#Evaluation-Caption-Model)
 * [Pretrained Models](#Sheeko-Pretrained-Models-Resource)
 
 
@@ -143,9 +143,9 @@ To demo the Inference for pretrained models, Please go to [Inference](#Inference
 To train your own model for generating caption, Please start with [Data Preparation](#Data-Preparation) 
 ## Data Preparation
 
-## Training
+## Training a Model
 
-## Evaluation
+## Evaluation Caption Model
 
 ## Inference
 

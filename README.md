@@ -147,15 +147,21 @@ To train your own model for generating caption, Please start with [Data Preparat
     ### Build TF Records    
    
 ## Training a Model
-    ### Initial Training
-    ### Fine Tune the im2txt Model 
+
+### Initial Training
+    
+### Fine Tune the im2txt Model 
 ## Evaluation Caption Model
-    ### Evaluation Caption Model
+
+### Evaluation Caption Model
 
 ## Inference
- ### Image Caption
- ### Image Classification
- ### Object Detection
+
+### Image Caption
+ 
+### Image Classification
+ 
+### Object Detection
  
 ## Sheeko Pretrained Models Resource
 This project provides [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/) for generating captions.

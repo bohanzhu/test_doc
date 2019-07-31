@@ -151,13 +151,8 @@ To train your own model for generating caption, Please start with [Data Preparat
 
 ## Sheeko Pretrained Models Resource
 This project provides [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/) for generating captions.
-You could also get your own models by following the [walkthrough section](#Walkthrough). 
-<ul>
-   <li>[Prepare you Data](#Data-Preparasion)</li>
-   <li>[Training a Model](#training-a-model)</li>
-   <li>[Inference](#Inference)</li>
-   <li>[Evaluate your Caption Model](#Evaluation-Caption-Model)</li>
-</ul>
+Models with description are available for downloading. It's highly recommended to try the downloaded model in [Inference](#Inference) to test the performance.
+
 
 ## Built With
 

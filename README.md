@@ -142,13 +142,21 @@ To demo the Inference for pretrained models, Please go to [Inference](#Inference
 
 To train your own model for generating caption, Please start with [Data Preparation](#Data-Preparation) 
 ## Data Preparation
-
+    ### Clean Data
+    ### Build Data
+    ### Build TF Records    
+   
 ## Training a Model
-
+    ### Initial Training
+    ### Fine Tune the im2txt Model 
 ## Evaluation Caption Model
+    ### Evaluation Caption Model
 
 ## Inference
-
+ ### Image Caption
+ ### Image Classification
+ ### Object Detection
+ 
 ## Sheeko Pretrained Models Resource
 This project provides [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/) for generating captions.
 Models with description are available for downloading. It's highly recommended to try the downloaded model in [Inference](#Inference) to test the performance.

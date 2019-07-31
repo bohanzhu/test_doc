@@ -128,19 +128,25 @@ python -c 'import tensorflow as tf; print(tf.__version__)'
 python -c 'import nltk; print(nltk.__version__)'
 ```
 
-### Walkthrough
+## Walkthrough
 
-<p><b>Inference</b></p>
+<h3>What's included in the package</h3>
+<ul>
+   <li>Data Preparation</li>
+   <li>Training</li>
+   <li>Evaluation</li>
+   <li>Inference</li>
+</ul>
 
-<p><b>Training</b></p>
+To demo the Inference for pretrained models, Please go to [Inference](#Inference)
 
-<p><b>Evaluation</b></p>
+To train your own model for generating caption, Please start with [Data Preparation](#Data-Preparation) 
+## Data Preparation
 
-<p><b>Data Preparation</b></p>
 
 ## Sheeko Pretrained Models Resource
 This project provides [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/) for generating captions.
-You could also get your own models by following the walkthrough. 
+You could also get your own models by following the [walkthrough section](#Walkthrough). 
 <ul>
    <li>[Prepare you Data](#Data-Preparasion)</li>
    <li>[Training a Model](#training-a-model)</li>

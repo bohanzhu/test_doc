@@ -98,8 +98,8 @@ To enable GPU accleration for training and evaluation, it's recommened to run th
 <ul>
    <li>For Windows OS</li>
    <li><p>For Linux OS</p>
-      <pre>Run script under project root directory
-      <code>
+      <p>Run script under project root directory</p>
+      <pre><code>
       bash installation.sh
       </code>
       </pre>

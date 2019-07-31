@@ -142,9 +142,12 @@ To demo the Inference for pretrained models, Please go to [Inference](#Inference
 
 To train your own model for generating caption, Please start with [Data Preparation](#Data-Preparation) 
 ## Data Preparation
-    ### Clean Data
-    ### Build Data
-    ### Build TF Records    
+
+### Clean Data
+
+### Build Data
+
+### Build TF Records    
    
 ## Training a Model
 

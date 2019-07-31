@@ -59,7 +59,6 @@ This code package is the customization of Im2txt. Please see https://github.com/
 
 * Tool
     * TensorFlow
-    * Bazel
     * Numpy
     * NLTK
     * Python

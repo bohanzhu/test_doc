@@ -82,6 +82,11 @@ These instructions will get you a copy of the project up and running on your loc
    <li><p>Ubuntu 16.04.6 LTS OS environment or Windows OS</p></li>
    <li><p>NVIDIA GPU and NVIDIA Driver installed</p></li>
 </ul>
+<p><b>For VirtualBox Environment</b></p>
+<ul>
+   <li><p>Virtualbox Installed</p></li>
+   <li><p>vt-x enabled</p></li>
+</ul>
 
 ### Installation
 

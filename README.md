@@ -12,13 +12,7 @@ Machine learning implementation package to generate descriptive metadata for dig
     * [Test Installation](#Test-Installation)
     * [What's Included in the Package](#What's-Included-in-the-Package)
 * [Pretrained Models](#Pretrained-Models)
-    * [ptm-im2txt-incv3-mscoco-1m](#ptm-im2txt-incv3-mscoco-1m)
-    * [ptm-im2txt-incv3-mscoco-3m](#ptm-im2txt-incv3-mscoco-3m)
-    * [ptm-im2txt-incv3-mlib-cleaned-1m](#ptm-im2txt-incv3-mlib-cleaned-1m)
-    * [ptm-im2txt-incv3-mlib-cleaned-3m](#ptm-im2txt-incv3-mlib-cleaned-3m)
-    * [ptm-im2txt-incv3-mlib-uncleaned-1m](#ptm-im2txt-incv3-mlib-uncleaned-1m)
-    * [ptm-im2txt-mscoco1m-mlib-cleaned-2m](#ptm-im2txt-mscoco1m-mlib-cleaned-2m)
-    * [ptm-im2txt-mscoco3m-mlib-cleaned-1m](#ptm-im2txt-mscoco3m-mlib-cleaned-1m)    
+    * [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/)  
 * [Prepare you Data](#Data-Preparasion)
     * [Clean your data](#Clean-Data)
     * [Build your data](#Build-Data)
@@ -124,7 +118,7 @@ Run the script under project root directory through command line
 vagrant up
 ```
 
-## Test Installation
+### Test Installation
 Run following scripts to test packages installation
 ```
 python -c 'import tensorflow as tf; print(tf.__version__)'
@@ -132,6 +126,9 @@ python -c 'import tensorflow as tf; print(tf.__version__)'
 ```
 python -c 'import nltk; print(nltk.__version__)'
 ```
+
+### What's Included in the Package
+
 
 ## Running the tests
 Model

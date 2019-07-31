@@ -70,34 +70,37 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-<p>Required Packages</p>
+<p><b>Required Packages</b></p>
 <p>Python 2.7</p>
 <p>Tensorflow (For GPU version, please see https://www.tensorflow.org/install/gpu to install cuda related packages)</p>
 <p>Natural Language Toolkit (NLTK)</p>
 <p>spaCy</p>
 
-<p>For GPU acceleration</p>
+<p><b>For GPU acceleration</b></p>
 <p>Ubuntu 16.04.6 LTS OS environment or Windows OS</p>
 <p>NVIDIA GPU and NVIDIA Driver installed</p>
 
 
 ### Installation
+
 Run the script to see python version. Make sure you have python 2 installed
 ```
 python -V
 ```
+
 To enable GPU accleration for training and evaluation, it's recommened to run the code in Ubuntu 16.04.6 LTS OS or Windows OS environment 
 
-To Install Locally
+*To Install Locally
 
-For Windows OS
+   *For Windows OS
+   
 
-
-For Linux OS
-Run script under project root directory
-```
-bash installation.sh
-```
+   *For Linux OS
+   
+   Run script under project root directory
+      ```
+      bash installation.sh
+      ```
 
 Other OS are supported with virtualbox installed and vt-x option enabled in BIOS mode. Please be aware that there is limitation for GPU allocation in VirtualBox environment. So It's not recommended to run either training or evaluation script in VirtualBox. 
 

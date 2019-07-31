@@ -92,10 +92,10 @@ To enable GPU accleration for training and evaluation, it's recommened to run th
 
 *To Install Locally
 
-   *For Windows OS
+   For Windows OS
    
 
-   *For Linux OS
+   For Linux OS
    
    Run script under project root directory
       ```
@@ -108,7 +108,7 @@ Alternatively, please migrate the installation.sh, train, evaluation and library
 Run "bash installation.sh" under project root directory to install prerequisites packages before running training or evaluation scripts
 
 
-Use VirtualBox
+*Use VirtualBox
 Run the script under project root directory through command line
 ```
 vagrant up

@@ -11,7 +11,7 @@ Machine learning implementation package to generate descriptive metadata for dig
     * [Installation](#Installation)
     * [Test Installation](#Test-Installation)
 * [Walkthrough](#Walkthrough)
-* [Prepare you Data](#Data-Preparasion)
+* [Prepare you Data](#Data-Preparation)
     * [Clean your data](#Clean-Data)
     * [Build your data](#Build-Data)
     * [Build TF Records](#Build-TF-Records)
@@ -142,10 +142,11 @@ To demo the Inference for pretrained models, Please go to [Inference](#Inference
 
 To train your own model for generating caption, Please start with [Data Preparation](#Data-Preparation) 
 ## Data Preparation
-Get your data for caption generating model in any source following the required patter.
-Any custom data set with images and descriptive annotations in json format
+Get your data for caption generating model in any source following the required pattern.
+
+Data set need to contain both images files in JPEG format and descriptive annotation files in json format
 * JPEG image
-* JSON annotation file containing metadata of caption
+* JSON annotation file containing metadata of caption associated with JPEG image
 
 ```
 JSON annotation file example:

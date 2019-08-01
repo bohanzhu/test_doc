@@ -167,22 +167,29 @@ annotations:[{  id: 1,  image_id: 57870,  file_name: "COCO_train2014_00000000000
 * 470 K images with metadata in J. Willard Marriott Digital Library Collections ( https://collections.lib.utah.edu/)
 
 ### Clean Data
+This step is not required if your data set is clean and doesn't contain any noise (e.g. proper-noun). In this section we're removing proper-noun type noises using spaCy based NLP process in data set.
 
 #### Toolkit
 
 API: spaCy
 
-model: en_core_web_sm  (https://spacy.io/models/en)
+Model: [en_core_web_sm](https://spacy.io/models/en)
 
 #### What does it do?
 
-* Remove proper-noun noise in data set during NLP process using spaCy
+* Remove proper-noun noise
 
 * Simplify annotation file by leaving image_id and metadata field only
 
 * Save cleaned annotation file in the destination directory following the same directory structure
 
 * Create data report in JSON format under destination directory
+
+** valid metadata: total number of captions that have valid JPEG images found and got non empty result after NLP process
+** dir name: /path/to/data/dir, 
+** none pronoun: total number of captions that have valid JPEG images found and are proper-noun noise free 
+** pronoun: total number of captions that have valid JPEG images found and have proper-noun noise
+** data count: total number of captions that have valid JPEG images found
 
 #### Neuro-linguistic programming (NLP) Steps
 ##### step 1: PRONOUN cleaning
@@ -248,7 +255,7 @@ segment directories with given percentage into training set, the rest of directo
 Structure your data: image file name has to be unique id and annotation file has to has the same image_id of image file name (e.g. 15376.jpg,  annotation: "image_id": 15376 )
 * Structure your data: annotation files have to use the consistent field for getting metadata (e.g. "description_t")
 
-##### *Optional: clean up proper-noun and data noise in your annotation file by using clean_data_run.py and configure field name of metadata field, list of paths to annotation files and output directory, for more details, please see Data Cleaning page.
+##### Optional: clean up proper-noun and data noise in your annotation file by using clean_data_run.py and configure field name of metadata field, list of paths to annotation files and output directory, for more details, please see Data Cleaning page.
 * Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files, output directory and data segmentation args, e.g. method and training set percentage )
 Run build_data_run.py
 * Formatted data will be available in the directory you specified as OUTPUT_PATH in build_data_run.py
@@ -261,42 +268,6 @@ Run build_data_run.py
 * Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files and output directory)
 * Run build_data_run.py
 * Inference results will be stored in OUTPUT_PATH in caption_infer.py 
-
-
-
-Training Data
-Setup storage space on Qumluo.
-Data set 1
-Identify 80% of collections for training
-set1/training/coll-xxxx
-Reserve rest of the collections for testing
-set1/testing/coll-xxxx
-Data set 2
-Divide each collection. Mark 80% of the collection for training
-set2/coll-xxxx/training
-Reserve the remaining part of the collection for testing
-set2/coll-xxx/testing
-Data set 3
-Generate 20 groups based on keywords
-Mark 80% of each group for training
-set3/key-###/training
-Reserve the remaining part of the group for testing
-set3/key-###/testing
-Testing Data Set 1
-Start with Inception.
-Generate keywords for set1/testing/coll-xxxx
-Use local data (set1/training/coll-xxxx) to train the model further.
-Generate keywords for set1/testing/coll-xxxx
-Compare results
-
-
-Testing Data Set 2
-Start with Inception.
-Generate keywords for set1/testing/coll-xxxx
-Clear local data (set1/training/coll-xxxx) by removing proper nouns.
-Use cleaned local data  to train the model further.
-Generate keywords for set1/testing/coll-xxxx
-Compare results
 
 ### Build TF Records    
    

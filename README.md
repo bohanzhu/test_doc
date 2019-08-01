@@ -144,7 +144,7 @@ To train your own model for generating caption, Please start with [Data Preparat
 ## Data Preparation
 Get your data for caption generating model in any source following the required pattern.
 
-Data set need to contain both images files in JPEG format and descriptive annotation files in json format
+Data Set needs to contain both images files in JPEG format and descriptive annotation files in json format
 * JPEG image
 * JSON annotation file containing metadata of caption associated with JPEG image
 
@@ -159,14 +159,132 @@ annotations:[{  id: 1,  image_id: 57870,  file_name: "COCO_train2014_00000000000
 ]
 
 ```
-The sheeko pretrained models are trained using the data source below:
+[The sheeko pretrained models](#Sheeko-Pretrained-Models-Resource) are trained using the data source below:
 
-120 K images with metadata in MSCOCO dataset (http://cocodataset.org)
-470 K images with metadata in J. Willard Marriott Digital Library Collections ( https://collections.lib.utah.edu/)
+* 120 K images with metadata in MSCOCO dataset (http://cocodataset.org)
+* 470 K images with metadata in J. Willard Marriott Digital Library Collections ( https://collections.lib.utah.edu/)
 
 ### Clean Data
 
+Toolkit
+API: spaCy
+model: en_core_web_sm  (https://spacy.io/models/en)
+
+What does it do?
+Remove proper-noun noise in data set during NLP process using spaCy
+Simplify annotation file by leaving image_id and metadata field only
+Save cleaned annotation file in the destination directory following the same directory structure
+
+Create data report in JSON format under destination directory
+
+Neuro-linguistic programming (NLP) Steps
+#step 1: PRONOUN cleaning
+#    1.1 replace named person with "person"
+#         example: Mary Jane with daughters --> a person with daughters
+#    1.2 remove DATE, TIME, ORG, GPE, LOC, PRODUCT, EVENT, WORK ART, LAW, LANGUAGE, FAC, NORP, PERCENT, MONEY, QUANTITY, ORIGINAL     
+#     and get their parent node, if there's no parent node, then abort this sentence)
+#         example: A women group is photographed at the Ashley Power Plant up Taylor Mountain road --> A women group is photographed
+#step 2: Parent nodes cleaning 
+#    2.1 if the parent node is 'DET', 'NOUN', 'NUM', 'PUNCT', 'CCONJ', 'VERB', remove the subtrees nodes of the lefts if it's not in the list 
+#    2.2 if the parent node is PREP or other types, remove the nodes and their children nodes
+#         example: A woman tends to a fire at a Ute Indian camp near Brush Creek. --> A woman tends to a fire at a camp .
+
+#step 3: NOUN entities cleaning
+#    3.1 replace the chunk of non-named enties chunk with simple entity along with CC, CD, DT and IN
+#    3.2 replace CD type number with string value, e.g. 3, three
+#         example: Ute couple with child stand in front of old cars --> couple with child stand in front of cars
+
+#step 4: Reform
+#    4.1 put person entity and chunk replacement in position
+#    4.2 replace person entities with understandable words, e.g. ,if multiple people then use num people instead, e.g. "a person" "two people", else say "a group of people"
+#    4.3 replace nums of person entities (>=3) replace with "a group of " + noun
+#    4.4 remove the tokens with index in indexes list of the sentence and convert the array to sentence 
 ### Build Data
+
+Description
+Formatted data in structure is required for the package. To create format data we need to go through build data section.
+
+What does it do?
+Filter data set by getting data that have both images and associating annotation only
+Segment images and annotation files into training and testing data sets
+Resize image to trainable format into training and testing data set
+Build annotation file for training and testing data set
+Segment Mode
+We provide two segment methods:
+
+1. segment all data through out all directories as one into training and testing data set.
+
+2. segment the list of directories into training and testing sets.
+
+seg_by_image
+segment data set in each directory with given percentage of data into training set, the rest into test
+
+
+seg_by_dir
+segment directories with given percentage into training set, the rest of directories into test
+
+Steps
+Make clear the purpose: Training, Inference or Evaluation
+Prepare your data according to the purpose
+Make sure you have enough space in the output directory to store the output result ( 6 X of original data set in file size)
+
+
+For particular purpose
+Training
+Prepare images file in JPG format (single file size no more than 15 mb) and associating annotation files in JSON format. 
+Structure your data: image file name has to be unique id and annotation file has to has the same image_id of image file name (e.g. 15376.jpg,  annotation: "image_id": 15376 )
+Structure your data: annotation files have to use the consistent field for getting metadata (e.g. "description_t")
+*Optional: clean up proper-noun and data noise in your annotation file by using clean_data_run.py and configure field name of metadata field, list of paths to annotation files and output directory, for more details, please see Data Cleaning page.
+Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files, output directory and data segmentation args, e.g. method and training set percentage )
+Run build_data_run.py
+Formatted data will be available in the directory you specified as OUTPUT_PATH in build_data_run.py
+For im2txt captioning model training. Run build_TF_run.py to generating TF Records. Each image object contains "file_name" and "id". Each annotation object contains "id", "image_id" and "caption". Each image object may refers to multiple caption objects
+TF Records will be located under OUTPUT_PATH which is runnable data for the training
+Inference
+Prepare images file for inference in JPG format
+Prepare checkpoint file of model and corresponding vocabulary file 
+Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files and output directory)
+Run build_data_run.py
+Inference results will be stored in OUTPUT_PATH in caption_infer.py 
+Evaluation
+Metric
+Caption: perplexity per word
+Classification: accuracy, precision, recall
+Object Detection: ground-truth
+
+Training Data
+Setup storage space on Qumluo.
+Data set 1
+Identify 80% of collections for training
+set1/training/coll-xxxx
+Reserve rest of the collections for testing
+set1/testing/coll-xxxx
+Data set 2
+Divide each collection. Mark 80% of the collection for training
+set2/coll-xxxx/training
+Reserve the remaining part of the collection for testing
+set2/coll-xxx/testing
+Data set 3
+Generate 20 groups based on keywords
+Mark 80% of each group for training
+set3/key-###/training
+Reserve the remaining part of the group for testing
+set3/key-###/testing
+Testing Data Set 1
+Start with Inception.
+Generate keywords for set1/testing/coll-xxxx
+Use local data (set1/training/coll-xxxx) to train the model further.
+Generate keywords for set1/testing/coll-xxxx
+Compare results
+
+
+Testing Data Set 2
+Start with Inception.
+Generate keywords for set1/testing/coll-xxxx
+Clear local data (set1/training/coll-xxxx) by removing proper nouns.
+Use cleaned local data  to train the model further.
+Generate keywords for set1/testing/coll-xxxx
+Compare results
 
 ### Build TF Records    
    

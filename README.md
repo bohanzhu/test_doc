@@ -185,11 +185,11 @@ Model: [en_core_web_sm](https://spacy.io/models/en)
 
 * Create data report in JSON format under destination directory
 
-      * valid metadata: total number of captions that have valid JPEG images found and got non empty result after NLP process
-      * dir name: /path/to/data/dir, 
-      * none pronoun: total number of captions that have valid JPEG images found and are proper-noun noise free 
-      * pronoun: total number of captions that have valid JPEG images found and have proper-noun noise
-      * data count: total number of captions that have valid JPEG images found
+    * valid metadata: total number of captions that have valid JPEG images found and got non empty result after NLP process
+    * dir name: /path/to/data/dir, 
+    * none pronoun: total number of captions that have valid JPEG images found and are proper-noun noise free 
+    * pronoun: total number of captions that have valid JPEG images found and have proper-noun noise
+    * data count: total number of captions that have valid JPEG images found
 
 #### Neuro-linguistic programming (NLP) Steps
 ##### step 1: PRONOUN cleaning

@@ -141,15 +141,17 @@ python -c 'import nltk; print(nltk.__version__)'
 To demo the Inference for pretrained models, Please go to [Inference](#Inference)
 
 To train your own model for generating caption, Please start with [Data Preparation](#Data-Preparation) 
-## Data Preparation
-Get your data for caption generating model in any source following the required pattern.
 
-Data Set needs to contain both images files in JPEG format and descriptive annotation files in json format
+## Data Preparation
+Data from any source for caption generating model need following the required pattern.
+
+Both images files in JPEG format and descriptive annotation files in json format are required.
 * JPEG image
 * JSON annotation file containing metadata of caption associated with JPEG image
 
+#### JSON Annotation File Example
 ```
-JSON annotation file example:
+
 [
 images:[{
 "file_name": "/vagrant/data/dc_bpc/125853.jpg", "id": 57870
@@ -166,45 +168,51 @@ annotations:[{  id: 1,  image_id: 57870,  file_name: "COCO_train2014_00000000000
 
 ### Clean Data
 
-Toolkit
+#### Toolkit
+
 API: spaCy
+
 model: en_core_web_sm  (https://spacy.io/models/en)
 
-What does it do?
-Remove proper-noun noise in data set during NLP process using spaCy
-Simplify annotation file by leaving image_id and metadata field only
-Save cleaned annotation file in the destination directory following the same directory structure
+#### What does it do?
 
-Create data report in JSON format under destination directory
+* Remove proper-noun noise in data set during NLP process using spaCy
 
-Neuro-linguistic programming (NLP) Steps
-#step 1: PRONOUN cleaning
-#    1.1 replace named person with "person"
-#         example: Mary Jane with daughters --> a person with daughters
-#    1.2 remove DATE, TIME, ORG, GPE, LOC, PRODUCT, EVENT, WORK ART, LAW, LANGUAGE, FAC, NORP, PERCENT, MONEY, QUANTITY, ORIGINAL     
-#     and get their parent node, if there's no parent node, then abort this sentence)
-#         example: A women group is photographed at the Ashley Power Plant up Taylor Mountain road --> A women group is photographed
-#step 2: Parent nodes cleaning 
-#    2.1 if the parent node is 'DET', 'NOUN', 'NUM', 'PUNCT', 'CCONJ', 'VERB', remove the subtrees nodes of the lefts if it's not in the list 
-#    2.2 if the parent node is PREP or other types, remove the nodes and their children nodes
-#         example: A woman tends to a fire at a Ute Indian camp near Brush Creek. --> A woman tends to a fire at a camp .
+* Simplify annotation file by leaving image_id and metadata field only
 
-#step 3: NOUN entities cleaning
-#    3.1 replace the chunk of non-named enties chunk with simple entity along with CC, CD, DT and IN
-#    3.2 replace CD type number with string value, e.g. 3, three
-#         example: Ute couple with child stand in front of old cars --> couple with child stand in front of cars
+* Save cleaned annotation file in the destination directory following the same directory structure
 
-#step 4: Reform
-#    4.1 put person entity and chunk replacement in position
-#    4.2 replace person entities with understandable words, e.g. ,if multiple people then use num people instead, e.g. "a person" "two people", else say "a group of people"
-#    4.3 replace nums of person entities (>=3) replace with "a group of " + noun
-#    4.4 remove the tokens with index in indexes list of the sentence and convert the array to sentence 
+* Create data report in JSON format under destination directory
+
+#### Neuro-linguistic programming (NLP) Steps
+##### step 1: PRONOUN cleaning
+* 1.1 replace named person with "person"
+example: Mary Jane with daughters --> a person with daughters
+* 1.2 remove DATE, TIME, ORG, GPE, LOC, PRODUCT, EVENT, WORK ART, LAW, LANGUAGE, FAC, NORP, PERCENT, MONEY, QUANTITY, ORIGINAL     
+and get their parent node, if there's no parent node, then abort this sentence)
+example: A women group is photographed at the Ashley Power Plant up Taylor Mountain road --> A women group is photographed
+##### step 2: Parent nodes cleaning 
+* 2.1 if the parent node is 'DET', 'NOUN', 'NUM', 'PUNCT', 'CCONJ', 'VERB', remove the subtrees nodes of the lefts if it's not in the list 
+* 2.2 if the parent node is PREP or other types, remove the nodes and their children nodes
+example: A woman tends to a fire at a Ute Indian camp near Brush Creek. --> A woman tends to a fire at a camp .
+
+##### step 3: NOUN entities cleaning
+* 3.1 replace the chunk of non-named enties chunk with simple entity along with CC, CD, DT and IN
+* 3.2 replace CD type number with string value, e.g. 3, three
+example: Ute couple with child stand in front of old cars --> couple with child stand in front of cars
+
+##### step 4: Reform
+* 4.1 put person entity and chunk replacement in position
+* 4.2 replace person entities with understandable words, e.g. ,if multiple people then use num people instead, e.g. "a person" "two people", else say "a group of people"
+* 4.3 replace nums of person entities (>=3) replace with "a group of " + noun
+* 4.4 remove the tokens with index in indexes list of the sentence and convert the array to sentence 
+
 ### Build Data
 
-Description
+#### Description
 Formatted data in structure is required for the package. To create format data we need to go through build data section.
 
-What does it do?
+#### What does it do?
 Filter data set by getting data that have both images and associating annotation only
 Segment images and annotation files into training and testing data sets
 Resize image to trainable format into training and testing data set
@@ -223,13 +231,13 @@ segment data set in each directory with given percentage of data into training s
 seg_by_dir
 segment directories with given percentage into training set, the rest of directories into test
 
-Steps
+#### Steps
 Make clear the purpose: Training, Inference or Evaluation
 Prepare your data according to the purpose
 Make sure you have enough space in the output directory to store the output result ( 6 X of original data set in file size)
 
 
-For particular purpose
+#### For particular purpose
 Training
 Prepare images file in JPG format (single file size no more than 15 mb) and associating annotation files in JSON format. 
 Structure your data: image file name has to be unique id and annotation file has to has the same image_id of image file name (e.g. 15376.jpg,  annotation: "image_id": 15376 )

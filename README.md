@@ -187,18 +187,22 @@ model: en_core_web_sm  (https://spacy.io/models/en)
 #### Neuro-linguistic programming (NLP) Steps
 ##### step 1: PRONOUN cleaning
 * 1.1 replace named person with "person"
+
 example: Mary Jane with daughters --> a person with daughters
 * 1.2 remove DATE, TIME, ORG, GPE, LOC, PRODUCT, EVENT, WORK ART, LAW, LANGUAGE, FAC, NORP, PERCENT, MONEY, QUANTITY, ORIGINAL     
 and get their parent node, if there's no parent node, then abort this sentence)
+
 example: A women group is photographed at the Ashley Power Plant up Taylor Mountain road --> A women group is photographed
 ##### step 2: Parent nodes cleaning 
 * 2.1 if the parent node is 'DET', 'NOUN', 'NUM', 'PUNCT', 'CCONJ', 'VERB', remove the subtrees nodes of the lefts if it's not in the list 
 * 2.2 if the parent node is PREP or other types, remove the nodes and their children nodes
+
 example: A woman tends to a fire at a Ute Indian camp near Brush Creek. --> A woman tends to a fire at a camp .
 
 ##### step 3: NOUN entities cleaning
 * 3.1 replace the chunk of non-named enties chunk with simple entity along with CC, CD, DT and IN
 * 3.2 replace CD type number with string value, e.g. 3, three
+
 example: Ute couple with child stand in front of old cars --> couple with child stand in front of cars
 
 ##### step 4: Reform
@@ -213,52 +217,52 @@ example: Ute couple with child stand in front of old cars --> couple with child 
 Formatted data in structure is required for the package. To create format data we need to go through build data section.
 
 #### What does it do?
-Filter data set by getting data that have both images and associating annotation only
-Segment images and annotation files into training and testing data sets
-Resize image to trainable format into training and testing data set
-Build annotation file for training and testing data set
-Segment Mode
+* Filter data set by getting data that have both images and associating annotation only
+* Segment images and annotation files into training and testing data sets
+* Resize image to trainable format into training and testing data set
+* Build annotation file for training and testing data set
+
+##### Segment Mode
 We provide two segment methods:
 
 1. segment all data through out all directories as one into training and testing data set.
 
 2. segment the list of directories into training and testing sets.
 
-seg_by_image
+* seg_by_image
 segment data set in each directory with given percentage of data into training set, the rest into test
 
 
-seg_by_dir
+* seg_by_dir
 segment directories with given percentage into training set, the rest of directories into test
 
 #### Steps
-Make clear the purpose: Training, Inference or Evaluation
-Prepare your data according to the purpose
-Make sure you have enough space in the output directory to store the output result ( 6 X of original data set in file size)
+* Make clear the purpose: Training, Inference or Evaluation
+* Prepare your data according to the purpose
+* Make sure you have enough space in the output directory to store the output result ( 6 X of original data set in file size)
 
 
 #### For particular purpose
-Training
-Prepare images file in JPG format (single file size no more than 15 mb) and associating annotation files in JSON format. 
+##### Training
+* Prepare images file in JPG format (single file size no more than 15 mb) and associating annotation files in JSON format. 
 Structure your data: image file name has to be unique id and annotation file has to has the same image_id of image file name (e.g. 15376.jpg,  annotation: "image_id": 15376 )
-Structure your data: annotation files have to use the consistent field for getting metadata (e.g. "description_t")
-*Optional: clean up proper-noun and data noise in your annotation file by using clean_data_run.py and configure field name of metadata field, list of paths to annotation files and output directory, for more details, please see Data Cleaning page.
-Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files, output directory and data segmentation args, e.g. method and training set percentage )
+* Structure your data: annotation files have to use the consistent field for getting metadata (e.g. "description_t")
+
+##### *Optional: clean up proper-noun and data noise in your annotation file by using clean_data_run.py and configure field name of metadata field, list of paths to annotation files and output directory, for more details, please see Data Cleaning page.
+* Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files, output directory and data segmentation args, e.g. method and training set percentage )
 Run build_data_run.py
-Formatted data will be available in the directory you specified as OUTPUT_PATH in build_data_run.py
-For im2txt captioning model training. Run build_TF_run.py to generating TF Records. Each image object contains "file_name" and "id". Each annotation object contains "id", "image_id" and "caption". Each image object may refers to multiple caption objects
-TF Records will be located under OUTPUT_PATH which is runnable data for the training
-Inference
-Prepare images file for inference in JPG format
-Prepare checkpoint file of model and corresponding vocabulary file 
-Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files and output directory)
-Run build_data_run.py
-Inference results will be stored in OUTPUT_PATH in caption_infer.py 
-Evaluation
-Metric
-Caption: perplexity per word
-Classification: accuracy, precision, recall
-Object Detection: ground-truth
+* Formatted data will be available in the directory you specified as OUTPUT_PATH in build_data_run.py
+* For im2txt captioning model training. Run build_TF_run.py to generating TF Records. Each image object contains "file_name" and "id". Each annotation object contains "id", "image_id" and "caption". Each image object may refers to multiple caption objects
+* TF Records will be located under OUTPUT_PATH which is runnable data for the training
+
+##### Inference
+* Prepare images file for inference in JPG format
+* Prepare checkpoint file of model and corresponding vocabulary file 
+* Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files and output directory)
+* Run build_data_run.py
+* Inference results will be stored in OUTPUT_PATH in caption_infer.py 
+
+
 
 Training Data
 Setup storage space on Qumluo.
@@ -304,6 +308,8 @@ Compare results
 ## Evaluation Caption Model
 
 ### Evaluation Caption Model
+##### Metric
+Caption: perplexity per word
 
 ## Inference
 

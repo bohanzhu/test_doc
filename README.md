@@ -142,6 +142,26 @@ To demo the Inference for pretrained models, Please go to [Inference](#Inference
 
 To train your own model for generating caption, Please start with [Data Preparation](#Data-Preparation) 
 ## Data Preparation
+Get your data for caption generating model in any source following the required patter.
+Any custom data set with images and descriptive annotations in json format
+* JPEG image
+* JSON annotation file containing metadata of caption
+
+```
+JSON annotation file example:
+[
+images:[{
+"file_name": "/vagrant/data/dc_bpc/125853.jpg", "id": 57870
+}, ...
+]
+annotations:[{  id: 1,  image_id: 57870,  file_name: "COCO_train2014_000000000009.jpg"  caption: "a cat and dog on wooden floor next to a stairwell."}, ...
+]
+
+```
+The sheeko pretrained models are trained using the data source below:
+
+120 K images with metadata in MSCOCO dataset (http://cocodataset.org)
+470 K images with metadata in J. Willard Marriott Digital Library Collections ( https://collections.lib.utah.edu/)
 
 ### Clean Data
 

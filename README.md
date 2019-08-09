@@ -294,6 +294,12 @@ Caption: perplexity per word
 This project provides [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/) for generating captions.
 Models with description are available for downloading. It's highly recommended to try the downloaded model in [Inference](#Inference) to test the performance.
 
+## Windows and Linux switch (path / for linux or \\ for windows)
+## Installation script implementation for windows and linux (linux run installation.sh, windows run installaation_win.sh)
+## GPU Use (run locally, specify which gpu)
+## Metadata field (example of specifing metadata field and image id for cleaning, data build)
+## Model Migration (clear absolute path to make relative)
+## Provide resources downloading inception v3 model, classified label model and object detect model
 
 ## Built With
 

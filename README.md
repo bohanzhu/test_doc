@@ -314,6 +314,7 @@ This project provides [Sheeko Pretrained Models Resource](https://sheeko.org/pre
 Models with description are available for downloading. It's highly recommended to try the downloaded model in [Inference](#Inference) to test the performance.
 
 ## Windows and Linux switch (path / for linux or \\ for windows)
+## Data built in linux environment could not be used in Windows, you have to run data build in windows environment to build the format for windows
 ## Installation script implementation for windows and linux (linux run installation.sh, windows run installaation_win.sh)
 ## GPU Use (run locally, specify which gpu)
 ## Metadata field (example of specifing metadata field and image id for cleaning, data build)

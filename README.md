@@ -120,7 +120,7 @@ bash installation.sh
 This code package is supported using vagrant with virtualbox installed and vt-x option enabled in BIOS mode. Please be aware that there is limitation for GPU allocation in VirtualBox environment. So It's not recommended to run either training or evaluation script in VirtualBox. 
 
 Alternatively, please migrate the installation.sh, train, evaluation and library directories to local machine for the purpose. 
-For linux OS, run "bash installation.sh" under project root directory to install prerequisites packages before running training or evaluation scripts. For windows, install the required packages in [Prerequisites](#Prerequisites).
+For linux OS, run "bash installation.sh" under project root directory to install prerequisites packages before running training or evaluation scripts. For windows OS, install the required packages in [Prerequisites](#Prerequisites).
 
 Run the script under project root directory through command line
 ```

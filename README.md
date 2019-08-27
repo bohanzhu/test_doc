@@ -39,14 +39,17 @@ Inference Example for given image
 
 Caption: 
   ```
-  a street sign on a pole on a street (p=0.000016)
+  a bird sitting on top of a wooden bench . (p=0.001655)
   ```
 
 Label: 
 ```
-worm fence, snake fence, snake-rail fence, Virginia fence
-patio, terrace
-Tree
+jay
+indigo bunting, indigo finch, indigo bird, Passerina cyanea
+magpie
+pill bottle
+water ouzel, dipper
+Bird
 ```
 ### Architecture
 

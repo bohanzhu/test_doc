@@ -75,6 +75,22 @@ These instructions will get you a copy of the project up and running on your loc
 <li><p>Natural Language Toolkit (NLTK)</p></li>
 <li><p>spaCy</p></li>
 </ul>
+sudo apt-get update  
+sudo apt-get -y install python
+sudo apt-get -y install python-tk
+sudo apt-get -y --upgrade install python-pip
+pip install --upgrade pip 
+sudo pip install --no-cache-dir tensorflow-gpu
+sudo pip install --user Cython
+sudo pip install --user contextlib2
+sudo pip install --no-cache-dir spaCy
+sudo python -m spacy download en_core_web_sm
+sudo pip install python-resize-image
+sudo pip install --upgrade virtualenv
+sudo pip uninstall -y singledispatch
+sudo pip install -U nltk
+sudo pip install python-resize-image
+python -c 'import nltk; nltk.download("punkt")'
 <p><b>For GPU acceleration</b></p>
 <ul>
    <li><p>Ubuntu 16.04.6 LTS OS environment or Windows OS</p></li>

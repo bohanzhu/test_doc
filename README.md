@@ -67,13 +67,11 @@ Architecture of Caption generating model in this project is ["Show and Tell mode
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-
-<p><b>Required Packages</b></p>
-<p><b>For GPU acceleration</b></p>
+<p><b>For GPU acceleration, script has to run locally, please install required packages</b></p>
 <ul>
-   <li><p>Ubuntu 16.04.6 LTS OS environment or Windows OS</p></li>
-   <li><p>NVIDIA GPU and NVIDIA Driver installed</p></li>
-   <li><p>Python 2.7 or Python 3</p></li>
+<li><p>Ubuntu 16.04.6 LTS OS environment or Windows OS</p></li>
+<li><p>NVIDIA GPU and NVIDIA Driver installed</p></li>
+<li><p>Python 2.7 or Python 3</p></li>
 <li><p>Tensorflow (For GPU version, please see https://www.tensorflow.org/install/gpu to install cuda related packages)</p></li>
 <li><p>Natural Language Toolkit (NLTK)</p></li>
 <li><p>Natural Language Toolkit (NLTK) punkt package</p></li>   
@@ -84,6 +82,7 @@ These instructions will get you a copy of the project up and running on your loc
 <li><p>contextlib2</p></li>
 <li><p>Cython</p></li>
 </ul>
+
 <p><b>For VirtualBox Environment</b></p>
 <ul>
    <li><p>Virtualbox Installed</p></li>
@@ -92,7 +91,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installation
 
-Run the script to see python version. Make sure you have python 2 installed
+Run the script to see python version. Make sure python is installed properly.
 
 ```
 python -V
@@ -103,7 +102,9 @@ python -V
 To enable GPU accleration for training and evaluation, it's recommened to run the code in Ubuntu 16.04.6 LTS OS or Windows OS environment 
 
 <ul>
-   <li>For Windows OS</li>
+   <li><p>For Windows OS</p>
+   Install the required packages listed above.
+   </li>   
    <li><p>For Linux OS</p>
 Run script under project root directory
       
@@ -116,10 +117,10 @@ bash installation.sh
      
 <b>Use VirtualBox</b>
 
-Other OS are supported with virtualbox installed and vt-x option enabled in BIOS mode. Please be aware that there is limitation for GPU allocation in VirtualBox environment. So It's not recommended to run either training or evaluation script in VirtualBox. 
+This code package is supported using vagrant with virtualbox installed and vt-x option enabled in BIOS mode. Please be aware that there is limitation for GPU allocation in VirtualBox environment. So It's not recommended to run either training or evaluation script in VirtualBox. 
 
 Alternatively, please migrate the installation.sh, train, evaluation and library directories to local machine for the purpose. 
-Run "bash installation.sh" under project root directory to install prerequisites packages before running training or evaluation scripts
+For linux OS, run "bash installation.sh" under project root directory to install prerequisites packages before running training or evaluation scripts. For windows, install the required packages in [Prerequisites](#Prerequisites).
 
 Run the script under project root directory through command line
 ```

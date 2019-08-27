@@ -69,7 +69,10 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 <p><b>Required Packages</b></p>
+<p><b>For GPU acceleration</b></p>
 <ul>
+   <li><p>Ubuntu 16.04.6 LTS OS environment or Windows OS</p></li>
+   <li><p>NVIDIA GPU and NVIDIA Driver installed</p></li>
    <li><p>Python 2.7 or Python 3</p></li>
 <li><p>Tensorflow (For GPU version, please see https://www.tensorflow.org/install/gpu to install cuda related packages)</p></li>
 <li><p>Natural Language Toolkit (NLTK)</p></li>
@@ -80,11 +83,6 @@ These instructions will get you a copy of the project up and running on your loc
 <li><p>singledispatch</p></li>   
 <li><p>contextlib2</p></li>
 <li><p>Cython</p></li>
-</ul>
-<p><b>For GPU acceleration</b></p>
-<ul>
-   <li><p>Ubuntu 16.04.6 LTS OS environment or Windows OS</p></li>
-   <li><p>NVIDIA GPU and NVIDIA Driver installed</p></li>
 </ul>
 <p><b>For VirtualBox Environment</b></p>
 <ul>

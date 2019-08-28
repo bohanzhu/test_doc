@@ -11,6 +11,7 @@ Machine learning implementation package to generate descriptive metadata for dig
     * [Installation](#Installation)
     * [Test Installation](#Test-Installation)
 * [Walkthrough](#Walkthrough)
+* [Configuration](#Configure-File)
 * [Prepare you Data](#Data-Preparation)
     * [Clean your data](#Clean-Data)
     * [Build your data](#Build-Data)
@@ -234,6 +235,10 @@ DATA_DIR = 'data'
 # Path to output directory
 OUTPUT_PATH = "clean"
 ```
+## Configure File
+To make the script work, you need to configure the files with the information needed.
+Windows and Linux switch (path / for linux or \ for windows)
+
 
 ## Data Preparation
 Data from any source for caption generating model need following the required pattern.

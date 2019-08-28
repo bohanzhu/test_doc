@@ -157,9 +157,83 @@ Version of the nltk will be printed as result if successfully installed
    <li>Inference</li>
 </ul>
 
+In this section we're going to demo <i>how to perform the inference</i> and <i>how to get your own model</i>
+
+Inference
+
+To get pretrained model caption, classification, object detect model
+
+Get test images
+
+Configure code
+
+Test
+
+To perform multi-image 
+
+
+Training
+
+To get data
+
+Clean data
+Configure code
+
+Build Data
+Configure code
+
+Build TF Record
+Configure code
+
+Run training 
+Configure code
+
+Get test images
+
+Run Inference
+Configure code
+
+Run Evaluation
+Configure code
+
+
 To demo the Inference for pretrained models, Please go to [Inference](#Inference)
 
 To train your own model for generating caption, Please start with [Data Preparation](#Data-Preparation) 
+
+#### Get Started
+If you installed the packaged locally,
+* Skip the first step and following the rest of steps
+If you installed the packaged using vagrant box,
+* 1. login into vagrant box
+```
+vagrant ssh
+```
+* 2. migrate annotation files that need to clean into project directory.
+
+e.g. data_preparation\data contains demo data to perform NLP cleaning
+
+* 3. navigate to data_preparation directory and open clean_data_run.py file and configure the following setting
+```
+# Field name in annotation file containing metadata
+FIELD_NM = "description_t" 
+e.g. "{
+    "date_t": 1943,
+    "description_t": "Brooch made by internees at the Topaz Internment Camp in Delta, Utah. Residents would gather sea shells found at the camp, bleach them, and then paint and arrange them into brooches and other designs.",
+    ...
+    "
+
+# List of paths (relative or absolute)of directories containing the meta data that needs cleaning
+# This will perform NLP cleaning and remove proper-nouns
+DATA_DIR_LIST = ['data/demo_1']
+
+# or using Loop function to perform NLP on all sub directories under the given directory
+DATA_DIR = 'data'
+
+
+# Path to output directory
+OUTPUT_PATH = "clean"
+```
 
 ## Data Preparation
 Data from any source for caption generating model need following the required pattern.
@@ -237,39 +311,6 @@ example: Ute couple with child stand in front of old cars --> couple with child 
 * 4.3 replace nums of person entities (>=3) replace with "a group of " + noun
 * 4.4 remove the tokens with index in indexes list of the sentence and convert the array to sentence 
 
-#### Get Started
-If you installed the packaged locally,
-* Skip the first step and following the rest of steps
-If you installed the packaged using vagrant box,
-* 1. login into vagrant box
-```
-vagrant ssh
-```
-* 2. migrate annotation files that need to clean into project directory.
-
-e.g. data_preparation\data contains demo data to perform NLP cleaning
-
-* 3. navigate to data_preparation directory and open clean_data_run.py file and configure the following setting
-```
-# Field name in annotation file containing metadata
-FIELD_NM = "description_t" 
-e.g. "{
-    "date_t": 1943,
-    "description_t": "Brooch made by internees at the Topaz Internment Camp in Delta, Utah. Residents would gather sea shells found at the camp, bleach them, and then paint and arrange them into brooches and other designs.",
-    ...
-    "
-
-# List of paths (relative or absolute)of directories containing the meta data that needs cleaning
-# This will perform NLP cleaning and remove proper-nouns
-DATA_DIR_LIST = ['data/demo_1']
-
-# or using Loop function to perform NLP on all sub directories under the given directory
-DATA_DIR = 'data'
-
-
-# Path to output directory
-OUTPUT_PATH = "clean"
-```
 
 
 ### Build Data
@@ -321,40 +362,6 @@ Run build_data_run.py
 * Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files and output directory)
 * Run build_data_run.py
 * Inference results will be stored in OUTPUT_PATH in caption_infer.py 
-
-#### Get Started
-If you installed the packaged locally,
-* Skip the first step and following the rest of steps
-If you installed the packaged using vagrant box,
-* 1. login into vagrant box
-```
-vagrant ssh
-```
-* 2. migrate annotation files that need to clean into project directory.
-
-e.g. data_preparation\data contains demo data to perform NLP cleaning
-
-* 3. navigate to data_preparation directory and open clean_data_run.py file and configure the following setting
-```
-# Field name in annotation file containing metadata
-FIELD_NM = "description_t" 
-e.g. "{
-    "date_t": 1943,
-    "description_t": "Brooch made by internees at the Topaz Internment Camp in Delta, Utah. Residents would gather sea shells found at the camp, bleach them, and then paint and arrange them into brooches and other designs.",
-    ...
-    "
-
-# List of paths (relative or absolute)of directories containing the meta data that needs cleaning
-# This will perform NLP cleaning and remove proper-nouns
-DATA_DIR_LIST = ['data/demo_1']
-
-# or using Loop function to perform NLP on all sub directories under the given directory
-DATA_DIR = 'data'
-
-
-# Path to output directory
-OUTPUT_PATH = "clean"
-```
 
 
 ### Build TF Records    

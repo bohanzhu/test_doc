@@ -312,7 +312,6 @@ example: Ute couple with child stand in front of old cars --> couple with child 
 * 4.4 remove the tokens with index in indexes list of the sentence and convert the array to sentence 
 
 
-
 ### Build Data
 
 #### Description
@@ -344,19 +343,19 @@ segment directories with given percentage into training set, the rest of directo
 * Make sure you have enough space in the output directory to store the output result ( 6 X of original data set in file size)
 
 #### For particular purpose
-##### Training
+##### For Training
 * Prepare images file in JPG format (single file size no more than 15 mb) and associating annotation files in JSON format. 
 Structure your data: image file name has to be unique id and annotation file has to has the same image_id of image file name (e.g. 15376.jpg,  annotation: "image_id": 15376 )
 * Structure your data: annotation files have to use the consistent field for getting metadata (e.g. "description_t")
 
-##### Optional: clean up proper-noun and data noise in your annotation file by using clean_data_run.py and configure field name of metadata field, list of paths to annotation files and output directory, for more details, please see Data Cleaning page.
+##### For cleaning up proper-noun and data noise in your annotation file by using clean_data_run.py and configure field name of metadata field, list of paths to annotation files and output directory, for more details, please see Data Cleaning page.
 * Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files, output directory and data segmentation args, e.g. method and training set percentage )
 Run build_data_run.py
 * Formatted data will be available in the directory you specified as OUTPUT_PATH in build_data_run.py
 * For im2txt captioning model training. Run build_TF_run.py to generating TF Records. Each image object contains "file_name" and "id". Each annotation object contains "id", "image_id" and "caption". Each image object may refers to multiple caption objects
 * TF Records will be located under OUTPUT_PATH which is runnable data for the training
 
-##### Inference
+##### For Inference
 * Prepare images file for inference in JPG format
 * Prepare checkpoint file of model and corresponding vocabulary file 
 * Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files and output directory)
@@ -397,32 +396,3 @@ Models with description are available for downloading. It's highly recommended t
 ## Model Migration (clear absolute path to make relative)
 ## Provide resources downloading inception v3 model, classified label model and object detect model
 
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc

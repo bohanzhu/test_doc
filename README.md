@@ -73,10 +73,10 @@ These instructions will get you a copy of the project up and running on your loc
 <li><p>NVIDIA GPU and NVIDIA Driver installed</p></li>
 <li><p>Python 2.7 or Python 3</p></li>
 <li><p>Tensorflow (For GPU version, please see https://www.tensorflow.org/install/gpu to install cuda related packages)</p></li>
-<li><p>Natural Language Toolkit (NLTK)</p></li>
+<li><p><a href="https://www.nltk.org/">Natural Language Toolkit (NLTK)</a></p></li>
 <li><p>Natural Language Toolkit (NLTK) punkt package</p></li>   
-<li><p>spaCy</p></li>
-<li><p>python-resize-image</p></li>
+<li><p><a href="https://spacy.io/">spaCy</a></p></li>
+<li><p><a href="https://pypi.org/project/python-resize-image/">python-resize-image</a></p></li>
 <li><p>Pre-trained statistical NLP model: en_core_web_sm</p></li>
 <li><p><a href="https://pypi.org/project/singledispatch/">singledispatch</a></p></li>   
 <li><p><a href="https://pypi.org/project/contextlib2/">contextlib2</a></p></li>
@@ -104,6 +104,9 @@ To enable GPU accleration for training and evaluation, it's recommened to run th
 <ul>
    <li><p>For Windows OS</p>
    Install the required packages listed above.
+   To install punkt, run python script: 
+   import nltk
+   nltk.download("punkt")
    </li>   
    <li><p>For Linux OS</p>
 Run script under project root directory

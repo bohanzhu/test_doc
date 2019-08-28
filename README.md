@@ -201,10 +201,10 @@ For example: in vagrant box,
 Open <i>/vagrant/inference/caption/caption_inference_test.py</i> and configure the following fields:
 
 * 1. CHECKPOINT_PATH. Path to the directory containing the checkpoint file (pre-trained model)
-* 2. VOCAB_FILE.  Vocabulary Dictionary file
+* 2. VOCAB_FILE.  Path to the Vocabulary Dictionary file
 * 3. IMAGE_FILE. Path to the JPEG image file to generate caption
 
-You could also open the file under the <i> project_directory/inference/caption/caption_inference_test.py </i>
+You could also locate the file under the <i> project_directory/inference/caption/caption_inference_test.py </i>
 
 Here's an example of configuration under linux OS (vagrant).
 ```
@@ -234,7 +234,7 @@ So we get the following results printed
 
 caption_inference_run.py has the similar fields to configure. There's slight diference that it can loop over all images under the each directory in the list and generate the captions. Also instead of printing out the results, it creates a JSON file containing of the results generated.
 
-Here's an example of configuration.
+Here's an example of configuration under linux OS (vagrant).
 
 ```
 # List of paths to directories containing JPEG image files to caption. 
@@ -247,9 +247,9 @@ IMAGE_DIR_LIST = ["../../test_image"]
 OUTPUT_PATH = "output/captions.json"
 ```
 
-After running the script, the results will be stored in JSON file located at OUTPUT_PATH.
+After running the script, the results will be stored in JSON file located at <b>OUTPUT_PATH</b>.
 
-Feel free to do your own inference. However, this model is not perfect for doing inference for all images. 
+Feel free to do inference with your own images. However, this model is not perfect for doing inference for all images. 
 
 e.g. the  sheeko_demo_1.jpg 
 the result generated says it's a bird standing on the top of the wooden branch.
@@ -258,15 +258,128 @@ the result generated says it's a bird standing on the top of the wooden branch.
 
 #### Classification Inference
 
-Now 's start with the caption inference. Open inference\caption\caption_inference_test.py and configure the following fields:
+
+Now let's do the the classification labels inference.
+
+Open <i>/vagrant/inference/classification/classify_image_test.py</i> and configure the following fields:
 
 * 1. CHECKPOINT_PATH. Path to the directory containing the checkpoint file (pre-trained model)
-* 2. VOCAB_FILE.  Vocabulary Dictionary file
+* 2. VOCAB_DIR. Path to the directory containing Vocabulary Dictionary file
 * 3. IMAGE_FILE. Path to the JPEG image file to generate caption
+
+You could also locate the file under the <i> project_directory/inference/classification/classify_image_test.py </i>
+
+Here's an example of configuration under linux OS (vagrant).
+```
+# Path to pretrained model graph.pb file
+CHECKPOINT_PATH = "../../models/labels/classification/classify_image_graph_def.pb"
+
+# Path to vocabulary directory that containing pbtxt and txt dictionary file.
+VOCAB_DIR = "../../models/labels/classification"
+
+# Path to the JPEG image file to generate label
+IMAGE_FILE = "../../test_image/sheeko_demo_4.jpg"
+```
+
+Then we need to navigate to classify_image_test located directory and run the script
+
+```
+cd /vagrant/inference/classification
+
+python classify_image_test.py
+```
+So we get the following results printed
+```
+ox (score = 0.89056)
+oxcart (score = 0.03067)
+water buffalo, water ox, Asiatic buffalo, Bubalus bubalis (score = 0.00574)
+hog, pig, grunter, squealer, Sus scrofa (score = 0.00301)
+lakeside, lakeshore (score = 0.00288)
+```
+similar to caption_inference_run.py, classify_image_run.py also stored generated results in JSON File.
+
+Here's an example of configuration under linux OS (vagrant).
+
+```
+# Path to pretrained model graph.pb file
+CHECKPOINT_PATH = "../../models/labels/classification/classify_image_graph_def.pb"
+
+# Path to vocabulary directory that containing pbtxt and txt dictionary file.
+VOCAB_DIR = "../../models/labels/classification"
+
+# List of paths to JPEG image files to labels
+# The script will grab all JPEG in specified directories. 
+# No need to mention files individually. 
+# This will only grab images place directly in the directories. It will not go into child dirs.
+IMAGE_DIR_LIST = ["../../test_image"]
+
+# Path to output json file
+OUTPUT_PATH = "output/classifications.json"
+```
+
+After running the script, the results will be stored in JSON file located at <b>OUTPUT_PATH</b>.
+
 
 #### Object Detection Inference
 
-To perform multi-image 
+
+Now let's do the the object detect labels inference.
+
+Open <i>/vagrant/inference/object_detect/object_detect_test.py</i> and configure the following fields:
+
+* 1. CHECKPOINT_PATH. Path to the directory containing the checkpoint file (pre-trained model)
+* 2. VOCAB_FILE. Path to Vocabulary Dictionary file
+* 3. IMAGE_FILE. Path to the JPEG image file to generate caption
+
+You could also locate the file under the <i> project_directory/inference/object_detect/object_detect_test.py </i>
+
+Here's an example of configuration under linux OS (vagrant).
+```
+# Path to pretrained model graph.pb file
+CHECKPOINT_PATH = "../../models/labels/object_detect/models/faster_rcnn_inception_resnet_v2_atrous_oid_2018_01_28/frozen_inference_graph.pb"
+
+
+# Path to label mapping pbtxt file
+VOCAB_FILE = "../../models/labels/object_detect/vocab/oid_bbox_trainable_label_map.pbtxt"
+
+# Path to the JPEG image file to generate label
+IMAGE_FILE = "../../test_image/sheeko_demo_4.jpg"
+```
+
+Then we need to navigate to object_detect_test located directory and run the script
+
+```
+cd /vagrant/inference/object_detect
+
+python object_detect_test.py
+```
+Since object detect is GPU usage consuming, it's slower to run it under vagrant box. If you plan to do inference for multiple images,
+it's recommended to run the script locally.
+
+Here's the result:
+```
+[{'score': '0.72273505', 'label_text': u'Cattle'}, {'score': '0.3564907', 'label_text': u'Animal'}, {'score': '0.34420493', 'label_text': u'Furniture'}]
+
+```
+similar to caption_inference_run.py, object_detect_run.py also stored generated results in JSON File.
+
+Here's an example of configuration under linux OS (vagrant).
+
+```
+# Path to pretrained model graph.pb file
+CHECKPOINT_PATH = "path/to/dir/pretrained_model/graph.pb"
+
+# Path to label mapping pbtxt file
+VOCAB_FILE = "path/to/dir/pretrained_model/label_map.pbtxt"
+
+# List of paths to JPEG image files to caption. It's no longer needed since image_dir is used to grab all images inside to generate the captions, for legacy testing, please go to research/im2tx test_model.py
+IMAGE_DIR_LIST = ["path/to/dir/"]
+
+# Path to output json file
+OUTPUT_PATH = "path/to/output/object_detect.json"
+```
+
+After running the script, the results will be stored in JSON file located at <b>OUTPUT_PATH</b>.
 
 
 ### Train your own model Walkthrough

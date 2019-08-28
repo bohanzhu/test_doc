@@ -246,6 +246,7 @@ If you installed the packaged using vagrant box,
 vagrant ssh
 ```
 * 2. migrate annotation files that need to clean into project directory.
+e.g. data_preparation\data contains demo data to perform NLP cleaning
 
 * 3. navigate to data_preparation directory and open clean_data_run.py file and configure the following setting
 ```
@@ -259,7 +260,7 @@ e.g. "{
 
 # List of paths (relative or absolute)of directories containing the meta data that needs cleaning
 # This will perform NLP cleaning and remove proper-nouns
-DATA_DIR_LIST = ['data/dha_ac']
+DATA_DIR_LIST = ['data/demo_1']
 
 # or using Loop function to perform NLP on all sub directories under the given directory
 DATA_DIR = 'data'

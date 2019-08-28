@@ -415,6 +415,7 @@ Open <i>/vagrant/data_preparation/clean_data_run.py</i> and configure the follow
 * 2. DATA_DIR_LIST. List of directories containing annotation files that will process data cleaning
 * 3. OUTPUT_PATH. Path to output directory 
 * 4. DATA_DIR. This is alternative way for providing list of directories, you could loop over the given root directory
+
 You could also locate the file under the <i> project_directory/data_preparation/clean_data_run.py </i>
 
 Here's an example of configuration under linux OS (vagrant). Here we loop over data directory, so all directories under "data" will be processed. 
@@ -442,12 +443,51 @@ cd /vagrant/data_preparation/
 python clean_data_run.py
 ```
 
-After running the script, the clean data will be stored under <b>OUTPUT_PATH</b>.
+After running the script, the clean annotation files will be stored under <b>OUTPUT_PATH</b>.
 
 
-Once we've got the clean data needed.
+Once we've got the clean data needed. We could now structure our data into the format for training.
 
+Open build_data_run.py and configure the fields:
+* 1. FIELD_NM. Field name in annotation file containing metadata
+* 2. FIELD_ID. Field name in annotation file containing image id matching image file name.
+* 3. IMAGE_DIR_LIST. List of directories containing image files.
+* 4. CAPTION_DIR_LIST. List of directories containing annotations files.
+* 5. OUTPUT_PATH. Path to output directory 
+* 6. DATA_DIR. This is alternative way for providing list of directories, you could loop over the given root directory
+* 7. SEG_METHOD. Segment method: seg_by_image, seg_by_dir.  
+* 8. TRAIN_PERCENT. Integer of percent to put into training data set. The rest of data will go the test set.
 
+Here we put the cleaned annotations file along with the image files in the build_data_run.py.
+
+```
+# Field name in annotation file containing metadata
+FIELD_NM = "caption"
+# Field name in the annotation file containing the image file name
+FIELD_ID = "image_id"
+
+# List of paths (relative or absolute) of directories containing the annotation files
+CAPTION_DIR_LIST = ['clean/demo_1', 'clean/demo_2']
+# List of paths (relative or absolute) of directories containing the images
+IMAGE_DIR_LIST = ['data/demo_1', 'data/demo_2']
+
+# Path to output directory
+OUTPUT_PATH = "build"
+
+# Segment method: seg_by_image, seg_by_dir
+SEG_METHOD ='seg_by_image'
+
+# Training set percent in int
+TRAIN_PERCENT = 80
+```
+
+Run the script:
+
+```
+python build_data_run.py
+```
+
+The structured data is stored under <b>OUTPUT_PATH</b>
 
 
 #### Convert Data into  TF Records

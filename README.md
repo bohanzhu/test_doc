@@ -23,7 +23,7 @@ Machine learning implementation package to generate descriptive metadata for dig
     * [Image Caption](#Image-Caption)
     * [Image Classification](#Image-Classification)
     * [Object Detection](#Object-Detection)
-* [Pretrained Models](#Sheeko-Pretrained-Models-Resource)
+* [Pretrained Models](#Sheeko-Pretrained-Models-Resource) 
 
 
 
@@ -77,9 +77,9 @@ These instructions will get you a copy of the project up and running on your loc
 <li><p>Natural Language Toolkit (NLTK) punkt package</p></li>   
 <li><p>spaCy</p></li>
 <li><p>python-resize-image</p></li>
-<li><p>en_core_web_sm</p></li>
-<li><p>singledispatch</p></li>   
-<li><p>contextlib2</p></li>
+<li><p>Pre-trained statistical NLP model: en_core_web_sm</p></li>
+<li><p>[singledispatch] (# https://pypi.org/project/singledispatch/)</p></li>   
+<li><p>[contextlib2] (# https://pypi.org/project/contextlib2/)</p></li>
 <li><p>Cython</p></li>
 </ul>
 

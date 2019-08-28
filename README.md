@@ -407,22 +407,28 @@ Here to make the demo faster, we use the provided data under <i>data_prepartion/
 
 Most time the data you get is always not clean, so cleaning actually takes most of the time for your training. Here we provide the code to do the trick. It cleans up your data by removing proper-noun (See [Clean Data](#Clean-Data) for how it works) and also structures your data into training and testing sets. (See [Build Data](#Build-Data) for how it works)
 
+You could skip data cleaning if you already have the clean data.
+
 Open <i>/vagrant/data_preparation/clean_data_run.py</i> and configure the following fields:
 
 * 1. FIELD_NM. Field name in annotation file containing metadata
 * 2. DATA_DIR_LIST. List of directories containing annotation files that will process data cleaning
 * 3. OUTPUT_PATH. Path to output directory 
-
+* 4. DATA_DIR. This is alternative way for providing list of directories, you could loop over the given root directory
 You could also locate the file under the <i> project_directory/data_preparation/clean_data_run.py </i>
 
-Here's an example of configuration under linux OS (vagrant).
+Here's an example of configuration under linux OS (vagrant). Here we loop over data directory, so all directories under "data" will be processed. 
+
 ```
 # Field name in annotation file containing metadata
 FIELD_NM = "description_t"
 
-# List of paths (relative or absolute)of directories containing the meta data that needs cleaning
-# This will perform NLP cleaning and remove proper-nouns
-DATA_DIR_LIST = ['data/demo_1']
+# Example of looping all dirs under given path
+DATA_DIR = 'data'
+
+for dir in os.listdir(os.path.abspath(DATA_DIR)):
+    if os.path.isdir(os.path.abspath(os.path.join(os.path.abspath(DATA_DIR),dir))):
+        DATA_DIR_LIST.append(DATA_DIR + '/' + dir)
 
 # Path to output directory
 OUTPUT_PATH = "clean"
@@ -439,8 +445,12 @@ python clean_data_run.py
 After running the script, the clean data will be stored under <b>OUTPUT_PATH</b>.
 
 
+Once we've got the clean data needed.
 
-Build TF Record
+
+
+
+#### Convert Data into  TF Records
 
 Run training 
 

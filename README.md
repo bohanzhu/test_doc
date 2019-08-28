@@ -168,7 +168,7 @@ In this section we're going to demo <i>how to perform the inference</i> and <i>h
 
 To make the script work, we need to configure the code file.
 
-Please see [configuration](#Configure File) for details
+Please see [configuration](#Configure-File) for details.
 
 ### Inference Walkthrough
 
@@ -176,7 +176,7 @@ Please see [configuration](#Configure File) for details
 
 See our [pretrained models](#Sheeko-Pretrained-Models-Resource) website to download our pretrained models. 
 
-In our walkthrough we download the [ptm-im2txt-incv3-mlib-cleaned-3m](https://sheeko.org/downloads/ptm-im2txt-incv3-mlib-cleaned-3m.zip) which is trained on MSCOCO dataset (http://cocodataset.org) with 3 million steps.
+In our walkthrough we use the [ptm-im2txt-incv3-mlib-cleaned-3m](https://sheeko.org/downloads/ptm-im2txt-incv3-mlib-cleaned-3m.zip) which is trained on MSCOCO dataset (http://cocodataset.org) with 3 million steps.
 
 
 #### Next let's get the test images for inference. 
@@ -248,6 +248,12 @@ OUTPUT_PATH = "output/captions.json"
 ```
 
 After running the script, the results will be stored in JSON file located at OUTPUT_PATH.
+
+Feel free to do your own inference. However, this model is not perfect for doing inference for all images. 
+
+e.g. the  sheeko_demo_1.jpg 
+the result generated says it's a bird standing on the top of the wooden branch.
+<img src="sheeko_demo_1.jpg" height="240" width="360">
 
 
 #### Classification Inference

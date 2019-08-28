@@ -78,9 +78,9 @@ These instructions will get you a copy of the project up and running on your loc
 <li><p>spaCy</p></li>
 <li><p>python-resize-image</p></li>
 <li><p>Pre-trained statistical NLP model: en_core_web_sm</p></li>
-<li><p>[singledispatch] (# https://pypi.org/project/singledispatch/)</p></li>   
-<li><p>[contextlib2] (# https://pypi.org/project/contextlib2/)</p></li>
-<li><p>Cython</p></li>
+<li><p><a href="https://pypi.org/project/singledispatch/">singledispatch</a></p></li>   
+<li><p><a href="https://pypi.org/project/contextlib2/">contextlib2</a></p></li>
+<li><p><a href="https://pypi.org/project/Cython/">Cython</a></p></li>
 </ul>
 
 <p><b>For VirtualBox Environment</b></p>

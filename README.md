@@ -104,10 +104,12 @@ python -V
 
 <ul>
    <li><p>For Windows OS</p>
-   Install the required packages listed above.
-   To install punkt, run python script: 
+   <p>Install the required packages listed above.
+      To install punkt, run python script: </p>
+   <p>
    import nltk
    nltk.download("punkt")
+   </p>
    </li>   
    <li><p>For Linux OS</p>
 Run script under project root directory

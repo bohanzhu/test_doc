@@ -181,11 +181,11 @@ In our walkthrough we download the [ptm-im2txt-incv3-mlib-cleaned-3m](https://sh
 
 #### Next let's get the test images for inference. 
 
-In our code package we provide a few demo images under test_image. Here we're using the demo images for inference.
+In our code package we provide a few demo images under <i>test_image</i> directory. Here we're using the demo images for inference.
 
 #### Caption Inference
 
-Let's start with initiate vagrant box
+Let's start with turn on vagrant box
 
 ```
 vagrant up
@@ -193,16 +193,18 @@ vagrant up
 vagrant ssh
 ```
 
-Now let's do the the caption inference. the project directory is also the shared folder with the Virutalbox and that means you could edit the file either inside the VM or locally. In VM, the path the project is under /vagrant/.
+Now let's do the the caption inference.
+
+the project directory is also the shared folder with the Virutalbox and that means you could edit the file either inside the VM or locally. In VM, the path the project is under <i>/vagrant/</i>.
 
 For example: in vagrant box,
-Open /vagrant/inference/caption/caption_inference_test.py (it is shared folder)and configure the following fields:
+Open <i>/vagrant/inference/caption/caption_inference_test.py</i> and configure the following fields:
 
 * 1. CHECKPOINT_PATH. Path to the directory containing the checkpoint file (pre-trained model)
 * 2. VOCAB_FILE.  Vocabulary Dictionary file
 * 3. IMAGE_FILE. Path to the JPEG image file to generate caption
 
-You could also open the file under the project_directory/inference/caption/caption_inference_test.py
+You could also open the file under the <i> project_directory/inference/caption/caption_inference_test.py </i>
 
 Here's an example of configuration under linux OS (vagrant).
 ```
@@ -245,6 +247,7 @@ IMAGE_DIR_LIST = ["../../test_image"]
 OUTPUT_PATH = "output/captions.json"
 ```
 
+After running the script, the results will be stored in JSON file located at OUTPUT_PATH.
 
 
 #### Classification Inference

@@ -77,7 +77,7 @@ These instructions will get you a copy of the project up and running on your loc
 <li><p>Natural Language Toolkit (NLTK) punkt package</p></li>   
 <li><p><a href="https://spacy.io/">spaCy</a></p></li>
 <li><p><a href="https://pypi.org/project/python-resize-image/">python-resize-image</a></p></li>
-<li><p>Pre-trained statistical NLP model: en_core_web_sm</p></li>
+<li><p>Pre-trained statistical NLP model: <a href="https://spacy.io/models/en">en_core_web_sm</a></p></li>
 <li><p><a href="https://pypi.org/project/singledispatch/">singledispatch</a></p></li>   
 <li><p><a href="https://pypi.org/project/contextlib2/">contextlib2</a></p></li>
 <li><p><a href="https://pypi.org/project/Cython/">Cython</a></p></li>

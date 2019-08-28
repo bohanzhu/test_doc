@@ -178,7 +178,7 @@ You could easily switch between Linux OS and Windows OS by replacing "\\" with "
    <li>Inference</li>
 </ul>
 
-In this section we're going to demo <i>how to perform the inference</i> and <i>how to get your own model</i>
+In this section we're going to demo [how to perform the inference](#Inference-Walkthrough) and [how to get your own model](#Train-your-own-model-Walkthrough)
 
 To make the script work, we need to configure the code file.
 

@@ -160,43 +160,42 @@ Version of the nltk will be printed as result if successfully installed
 
 In this section we're going to demo <i>how to perform the inference</i> and <i>how to get your own model</i>
 
-Inference
+To make the script work, we need to configure the code file.
 
-To get pretrained model caption, classification, object detect model
+Please see [configuration](#Configure File) for details
+
+### Inference Walkthrough
+
+To get pretrained model caption, classification, object detect model, skip this if you have trained your own model alrady.
 
 Get test images
 
-Configure code
+Caption Inference
 
-Test
+Classification Inference
+
+Object Detection Inference
 
 To perform multi-image 
 
 
-Training
+### Train your own model
 
 To get data
 
 Clean data
-Configure code
 
 Build Data
-Configure code
 
 Build TF Record
-Configure code
 
 Run training 
-Configure code
 
 Get test images
 
 Run Inference
-Configure code
 
 Run Evaluation
-Configure code
-
 
 To demo the Inference for pretrained models, Please go to [Inference](#Inference)
 

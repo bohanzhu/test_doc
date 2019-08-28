@@ -398,11 +398,47 @@ After running the script, the results will be stored in JSON file located at <b>
 
 ### Train your own model Walkthrough
 
-To get data
+#### The first thing for your training is always about the data. 
 
-Clean data
+Please see [Data Prepartion Section](#Data-Preparation) for details.
+Here to make the demo faster, we use the provided data under <i>data_prepartion/data</i>. Under data directory both annotation files and JPEG images are provided.
 
-Build Data
+#### Clean and Structure your data
+
+Most time the data you get is always not clean, so cleaning actually takes most of the time for your training. Here we provide the code to do the trick. It cleans up your data by removing proper-noun (See [Clean Data](#Clean-Data) for how it works) and also structures your data into training and testing sets. (See [Build Data](#Build-Data) for how it works)
+
+Open <i>/vagrant/data_preparation/clean_data_run.py</i> and configure the following fields:
+
+* 1. FIELD_NM. Field name in annotation file containing metadata
+* 2. DATA_DIR_LIST. List of directories containing annotation files that will process data cleaning
+* 3. OUTPUT_PATH. Path to output directory 
+
+You could also locate the file under the <i> project_directory/data_preparation/clean_data_run.py </i>
+
+Here's an example of configuration under linux OS (vagrant).
+```
+# Field name in annotation file containing metadata
+FIELD_NM = "description_t"
+
+# List of paths (relative or absolute)of directories containing the meta data that needs cleaning
+# This will perform NLP cleaning and remove proper-nouns
+DATA_DIR_LIST = ['data/demo_1']
+
+# Path to output directory
+OUTPUT_PATH = "clean"
+```
+
+Then we need to navigate to clean_data_run located directory and run the script
+
+```
+cd /vagrant/data_preparation/
+
+python clean_data_run.py
+```
+
+After running the script, the clean data will be stored under <b>OUTPUT_PATH</b>.
+
+
 
 Build TF Record
 

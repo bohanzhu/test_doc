@@ -174,7 +174,7 @@ Please see [configuration](#Configure File) for details
 
 #### First we need to get the pretrained models, you could skip this if you have trained your own model already.
 
-See our [pretrained models](#Sheeko Pretrained Models Resource) website to download our pretrained models. 
+See our [pretrained models](#Sheeko-Pretrained-Models-Resource) website to download our pretrained models. 
 
 In our walkthrough we download the [ptm-im2txt-incv3-mlib-cleaned-3m](#https://sheeko.org/downloads/ptm-im2txt-incv3-mlib-cleaned-3m.zip) which is trained on MSCOCO dataset (http://cocodataset.org) with 3 million steps.
 

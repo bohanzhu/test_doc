@@ -131,13 +131,21 @@ vagrant up
 ```
 
 ### Test Installation
+Login into vagrant box first
+```
+vagrant ssh
+```
+
 Run following scripts to test packages installation
 ```
 python -c 'import tensorflow as tf; print(tf.__version__)'
 ```
+Version of the tensorflow will be printed as result if successfully installed
 ```
 python -c 'import nltk; print(nltk.__version__)'
 ```
+Version of the nltk will be printed as result if successfully installed
+
 
 ## Walkthrough
 

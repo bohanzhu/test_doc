@@ -91,15 +91,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installation
 
+<b>To Install Locally</b>
+
+To enable GPU accleration for training and evaluation, it's recommened to run the code in Ubuntu 16.04.6 LTS OS or Windows OS environment 
+
 Run the script to see python version. Make sure python is installed properly.
 
 ```
 python -V
 ```
-
-<b>To Install Locally</b>
-
-To enable GPU accleration for training and evaluation, it's recommened to run the code in Ubuntu 16.04.6 LTS OS or Windows OS environment 
 
 <ul>
    <li><p>For Windows OS</p>

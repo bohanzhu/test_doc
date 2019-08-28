@@ -237,6 +237,39 @@ example: Ute couple with child stand in front of old cars --> couple with child 
 * 4.3 replace nums of person entities (>=3) replace with "a group of " + noun
 * 4.4 remove the tokens with index in indexes list of the sentence and convert the array to sentence 
 
+#### Get Started
+If you installed the packaged locally,
+
+If you installed the packaged using vagrant box,
+* 1. login into vagrant box
+```
+vagrant ssh
+```
+* 2. migrate annotation files that need to clean into project directory.
+
+* 3. navigate to data_preparation directory and open clean_data_run.py file and configure the following setting
+```
+# Field name in annotation file containing metadata
+FIELD_NM = "description_t" 
+e.g. "{
+    "date_t": 1943,
+    "description_t": "Brooch made by internees at the Topaz Internment Camp in Delta, Utah. Residents would gather sea shells found at the camp, bleach them, and then paint and arrange them into brooches and other designs.",
+    ...
+    "
+
+# List of paths (relative or absolute)of directories containing the meta data that needs cleaning
+# This will perform NLP cleaning and remove proper-nouns
+DATA_DIR_LIST = ['data/dha_ac']
+
+# or using Loop function to perform NLP on all sub directories under the given directory
+DATA_DIR = 'data'
+
+
+# Path to output directory
+OUTPUT_PATH = "clean"
+```
+
+
 ### Build Data
 
 #### Description

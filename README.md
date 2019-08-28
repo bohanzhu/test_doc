@@ -239,13 +239,14 @@ example: Ute couple with child stand in front of old cars --> couple with child 
 
 #### Get Started
 If you installed the packaged locally,
-
+* Skip the first step and following the rest of steps
 If you installed the packaged using vagrant box,
 * 1. login into vagrant box
 ```
 vagrant ssh
 ```
 * 2. migrate annotation files that need to clean into project directory.
+
 e.g. data_preparation\data contains demo data to perform NLP cleaning
 
 * 3. navigate to data_preparation directory and open clean_data_run.py file and configure the following setting
@@ -301,7 +302,6 @@ segment directories with given percentage into training set, the rest of directo
 * Prepare your data according to the purpose
 * Make sure you have enough space in the output directory to store the output result ( 6 X of original data set in file size)
 
-
 #### For particular purpose
 ##### Training
 * Prepare images file in JPG format (single file size no more than 15 mb) and associating annotation files in JSON format. 
@@ -321,6 +321,41 @@ Run build_data_run.py
 * Configure arguments in build_data_run.py (field names in annotation file, list of paths to annotation files and image files and output directory)
 * Run build_data_run.py
 * Inference results will be stored in OUTPUT_PATH in caption_infer.py 
+
+#### Get Started
+If you installed the packaged locally,
+* Skip the first step and following the rest of steps
+If you installed the packaged using vagrant box,
+* 1. login into vagrant box
+```
+vagrant ssh
+```
+* 2. migrate annotation files that need to clean into project directory.
+
+e.g. data_preparation\data contains demo data to perform NLP cleaning
+
+* 3. navigate to data_preparation directory and open clean_data_run.py file and configure the following setting
+```
+# Field name in annotation file containing metadata
+FIELD_NM = "description_t" 
+e.g. "{
+    "date_t": 1943,
+    "description_t": "Brooch made by internees at the Topaz Internment Camp in Delta, Utah. Residents would gather sea shells found at the camp, bleach them, and then paint and arrange them into brooches and other designs.",
+    ...
+    "
+
+# List of paths (relative or absolute)of directories containing the meta data that needs cleaning
+# This will perform NLP cleaning and remove proper-nouns
+DATA_DIR_LIST = ['data/demo_1']
+
+# or using Loop function to perform NLP on all sub directories under the given directory
+DATA_DIR = 'data'
+
+
+# Path to output directory
+OUTPUT_PATH = "clean"
+```
+
 
 ### Build TF Records    
    

@@ -153,6 +153,20 @@ python -c 'import nltk; print(nltk.__version__)'
 ```
 Version of the nltk will be printed as result if successfully installed
 
+## Configure File
+To make the script work, you need to configure the files with the information needed.
+
+If you plan to run the script under Windows OS, path format with "\\". 
+
+e.g. CHECKPOINT_PATH = "path\\to\\dir\\pretrained_model\\graph.pb"
+
+
+If Linux OS, path format with "/". 
+
+e.g. CHECKPOINT_PATH = "path/to/dir/pretrained_model/graph.pb"
+
+You could easily switch between Linux OS and Windows OS by replacing "\\" with "/" or replacing "/" with "\\" .
+
 
 ## Walkthrough
 
@@ -437,10 +451,6 @@ DATA_DIR = 'data'
 # Path to output directory
 OUTPUT_PATH = "clean"
 ```
-## Configure File
-To make the script work, you need to configure the files with the information needed.
-Windows and Linux switch (path / for linux or \ for windows)
-
 
 ## Data Preparation
 Data from any source for caption generating model need following the required pattern.

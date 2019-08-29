@@ -149,19 +149,30 @@ Otherwise install the required packages listed same as Windows OS.
      
 #### Use VirtualBox
 
-This code package is supported using vagrant with virtualbox installed and vt-x option enabled in BIOS mode. Please be aware that there is limitation for GPU allocation in VirtualBox environment. So It's not recommended to run either training or evaluation script in VirtualBox. 
+This code package is supported using vagrant. **Virualbox** and **vt-x** option need to be enabled in BIOS mode. 
 
-Alternatively, please migrate the installation.sh, train, evaluation and library directories to local machine for the purpose. 
-For linux OS, run "bash installation.sh" under project root directory to install prerequisites packages before running training or evaluation scripts. For windows OS, install the required packages in [Prerequisites](#Prerequisites).
+Please be aware that there is limitation for GPU allocation in VirtualBox environment. So It's not recommended to run either training or evaluation script in VirtualBox. 
 
-Run the script under project root directory through command line
+Alternatively, if you plan to run training or evalutaion, please deploy the code package locally. 
+
+* Download and install **[vagrant](https://www.vagrantup.com/downloads.html)** on your local environment. 
+
+* Download code package and run the script under project root directory through command line
 ```
 vagrant up
 ```
 
+it will take few minutes if you running this script at the first time. It will create the VM and install all pakcages on the VM.
+
+After the script is done, the vagrant box is up, and you may notice that VM "sheeko_project" is created. 
+OS inside the VM is **Ubuntu 16.04.6 LTS OS** 
+
 ### Test Installation
-* 1.Login into vagrant box 
+
+If you deploy the code project in VM, you need to check installation inside the VM. Otherwise you can skip this step.
+* 1.Start up and enter vagrant box 
 ```
+vagrant up
 vagrant ssh
 ```
 
@@ -178,12 +189,12 @@ Version of the nltk will be printed as result if successfully installed
 ## Configure File
 To make the script work, you need to configure the files with the information needed.
 
-If you plan to run the script under Windows OS, path format with "\\". 
+If you plan to run the script under **Windows OS**, path format with "\\". 
 
 e.g. CHECKPOINT_PATH = "path\\to\\dir\\pretrained_model\\graph.pb"
 
 
-If Linux OS, path format with "/". 
+If **Linux OS**, path format with "/". 
 
 e.g. CHECKPOINT_PATH = "path/to/dir/pretrained_model/graph.pb"
 

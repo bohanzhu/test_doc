@@ -77,10 +77,10 @@ Difference between these two ways:
 * Deploy locally could maximize your GPU acceleration. This is useful when performing **training** and **evaluation**
 * Deploy in VirtualBox could run the script without doing additional installation and for sure it's cross-platform.
 
-You could deploy the project in both ways. So you could get best performance in all functionalities.
+You could deploy the project in both ways so you could get best performance in all functionalities.
 
 
-#### to deploy locally, please install required packages
+#### To deploy locally, please install required packages
 
 <ul>
 <li><p>Ubuntu 16.04.6 LTS OS environment or Windows OS</p></li>
@@ -109,9 +109,10 @@ You could deploy the project in both ways. So you could get best performance in 
 
 #### To Install Locally
 
-To enable GPU accleration for training and evaluation, it's recommened to run the code in Ubuntu 16.04.6 LTS OS or Windows OS environment 
+It's recommened to run the code in **Ubuntu 16.04.6 LTS OS or Windows OS environment**. 
+Make sure you have **tensorflow-gpu and CUDA tookit** installed to enable GPU accleration. Installation for tensorflow-gpu is not covered in this document.
 
-Run the script to see python version. Make sure python is installed properly.
+* Run the script to see python version. Make sure python is installed properly.
 
 ```
 python -V
@@ -131,12 +132,18 @@ python -V
    </p>
    </li>   
    <li><p>For Linux OS</p>
-Run script under project root directory
-      
+   <p>
+      if you have the permission for sudo, run script under project root directory:</p>
+     <p>  
+        
 ```
 bash installation.sh
 ```
-      
+
+ </p> 
+ <p>
+Otherwise install the required packages listed same as Windows OS.
+ </p>      
 </li>
 </ul>
      

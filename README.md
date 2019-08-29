@@ -68,7 +68,20 @@ Architecture of Caption generating model in this project is ["Show and Tell mode
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-<p><b>For GPU acceleration, script has to run locally, please install required packages</b></p>
+
+There're two ways deploying this project on your platform. 
+* 1. Deploy locally. Windows and Linux OS are supported.
+* 2. Deploy in VirtualBox
+
+Difference between these two ways:
+* Deploy locally could maximize your GPU acceleration. This is useful when performing **training** and **evaluation**
+* Deploy in VirtualBox could run the script without doing additional installation and for sure it's cross-platform.
+
+You could deploy the project in both ways. So you could get best performance in all functionalities.
+
+
+#### to deploy locally, please install required packages
+
 <ul>
 <li><p>Ubuntu 16.04.6 LTS OS environment or Windows OS</p></li>
 <li><p>NVIDIA GPU and NVIDIA Driver installed</p></li>
@@ -84,15 +97,17 @@ These instructions will get you a copy of the project up and running on your loc
 <li><p><a href="https://pypi.org/project/Cython/">Cython</a></p></li>
 </ul>
 
-<p><b>For VirtualBox Environment</b></p>
+#### To deploy in Virtualbox
+
 <ul>
    <li><p>Virtualbox Installed</p></li>
    <li><p>vt-x enabled</p></li>
+   <li><p>Vagrant Installed</p></li>
 </ul>
 
 ### Installation
 
-<b>To Install Locally</b>
+#### To Install Locally
 
 To enable GPU accleration for training and evaluation, it's recommened to run the code in Ubuntu 16.04.6 LTS OS or Windows OS environment 
 
@@ -125,7 +140,7 @@ bash installation.sh
 </li>
 </ul>
      
-<b>Use VirtualBox</b>
+#### Use VirtualBox
 
 This code package is supported using vagrant with virtualbox installed and vt-x option enabled in BIOS mode. Please be aware that there is limitation for GPU allocation in VirtualBox environment. So It's not recommended to run either training or evaluation script in VirtualBox. 
 

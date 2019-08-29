@@ -343,6 +343,7 @@ the result generated says it's a bird standing on the top of the wooden branch.
 
 #### Classification Inference
 
+https://github.com/googlecodelabs/nest-tensorflow/tree/master/tmp/imagenet
 
 Now let's do the the classification labels inference.
 

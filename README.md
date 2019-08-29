@@ -10,8 +10,8 @@ Machine learning implementation package to generate descriptive metadata for dig
     * [Prerequisites](#Prerequisites)
     * [Installation](#Installation)
     * [Test Installation](#Test-Installation)
+* [How to Use](#How-to-Use)
 * [Walkthrough](#Walkthrough)
-* [Configuration](#Configure-File)
 * [Prepare you Data](#Data-Preparation)
     * [Clean your data](#Clean-Data)
     * [Build your data](#Build-Data)
@@ -186,8 +186,46 @@ python -c 'import nltk; print(nltk.__version__)'
 ```
 Version of the nltk will be printed as result if successfully installed
 
-## Configure File
-To make the script work, you need to configure the files with the information needed.
+## How to Use
+
+### Execute script
+This code package is executed through Command Line. To run the script, you need to navigate to the directory of the script then run the script using "python script_name.py".
+
+Here's an example:
+
+```
+cd /path/to/project/dir/data_preparation
+python validate_data_run.py
+```
+
+### Configure File
+To make the script work, you need to configure the scripts with the information needed.
+
+Basically you need to configure the fields within the block in each script.
+
+Here's an example:
+
+```
+-------------------configuration start here-----------------------------------------------------------------------
+# Field name in annotation file containing metadata
+FIELD_NM = "caption"
+# Field name in the annotation file containing the image file name
+FIELD_ID = "image_id"
+
+# List of paths (relative or absolute) of directories containing the annotation files
+CAPTION_DIR_LIST = ['clean/demo_1', 'clean/demo_2']
+
+# Path to output directory
+OUTPUT_PATH = "build"
+
+# Segment method: seg_by_image, seg_by_dir
+SEG_METHOD ='seg_by_image'
+
+# Training set percent in int
+TRAIN_PERCENT = 80
+-------------------configuration end here-----------------------------------------------------------------------
+```
+
 
 If you plan to run the script under **Windows OS**, path format with "\\". 
 

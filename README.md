@@ -601,8 +601,60 @@ python build_TF_run.py
 
 After running the script, the TF Records will be stored under <b>"TF"</b>.
 
-#### 4. Run training 
+#### 4. Now, let's run training for caption model
 
+Finally we can train our own model for generating caption. We need to provide an inception checkpoint file. In this walkthrough we use
+
+Inception v3 (http://download.tensorflow.org/models/inception_v3_2016_08_28.tar.gz). Download and extract model to /vagrant/models/inception_v3.ckpt
+
+Open <i>/vagrant/train/caption_train_run.py</i> and configure the following fields:
+
+* 1. DATA_DIR. Path to directory containing the saved training TF files
+* 2. VOCAB_FILE. Path to dictionary file generated through TF build script
+* 3. INCEPTION_CHECKPOINT. Path to Inception checkpoint file
+* 3. MODEL_DIR. Directory to save or restore the training process of trained model
+* 4. TRAIN_STEPS. Number of Steps to train
+* 5. GPU_DEVICE. Gpu device to train your model, use integer number to refer to the device. Default set to 0
+
+You could also locate the file under the <i> project_directory/train/caption_train_run.py </i>
+
+
+```
+# Path to directory containing the saved training TF files
+DATA_DIR = "../data_preparation/TF"
+
+# Path to dictionary file generated through TF build script
+VOCAB_FILE = "../data_preparation/TF/word_count.txt"
+
+# Path to Inception checkpoint file.
+INCEPTION_CHECKPOINT = "../models/inception_v3.ckpt"
+
+# Directory to save or restore the training process of trained model.
+MODEL_DIR = "../models/caption/"
+
+# Number of Steps to train
+TRAIN_STEPS = 20
+
+# Select gpu device to train your model, use integer number to refer to the device: e.g. 0 -> gpu_0
+GPU_DEVICE = 0
+```
+Here we just run 20 steps (which can do nothing for performance) to create a demo model as example. However you could continue the training by running the script (unless you change MODEL_DIR). 
+
+Then we need to navigate to build_TF_run located directory and run the script
+
+```
+cd /vagrant/train/
+
+python caption_train_run.py
+```
+
+After running the script, the model file will be stored under <b>"models/caption/train"</b>.
+Under the model directory you will find model files including:
+* 1.<bcheckpoint file</b> which contains path to the model
+* 2. graph.pbtxt
+* 3. model.ckpt-n.data-00000-of-00001
+* 4. model.ckpt-n.index
+* 5. model.ckpt-n.meta
 
 #### 5. Run Inference
 

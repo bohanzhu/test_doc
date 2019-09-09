@@ -257,18 +257,18 @@ Please see [configuration](#Configure-File) for details.
 
 ### Inference Walkthrough
 
-#### First we need to get the pretrained models, you could skip this if you have trained your own model already.
+#### 1. First we need to get the pretrained models, you could skip this if you have trained your own model already.
 
 See our [pretrained models](#Sheeko-Pretrained-Models-Resource) website to download our pretrained models. 
 
 In our walkthrough we use the [ptm-im2txt-incv3-mlib-cleaned-3m](https://sheeko.org/downloads/ptm-im2txt-incv3-mlib-cleaned-3m.zip) which is trained on MSCOCO dataset (http://cocodataset.org) with 3 million steps.
 
 
-#### Next let's get the test images for inference. 
+#### 2. Next let's get the test images for inference. 
 
 In our code package we provide a few demo images under <i>test_image</i> directory. Here we're using the demo images for inference.
 
-#### Caption Inference
+#### 3. Caption Inference
 
 Let's start with turn on vagrant box
 
@@ -341,7 +341,7 @@ the result generated says it's a bird standing on the top of the wooden branch.
 <img src="sheeko_demo_1.jpg" height="240" width="360">
 
 
-#### Classification Inference
+#### 4. Classification Inference
 
 https://github.com/googlecodelabs/nest-tensorflow/tree/master/tmp/imagenet
 
@@ -406,7 +406,7 @@ OUTPUT_PATH = "output/classifications.json"
 After running the script, the results will be stored in JSON file located at <b>OUTPUT_PATH</b>.
 
 
-#### Object Detection Inference
+#### 5. Object Detection Inference
 
 
 Now let's do the the object detect labels inference.
@@ -562,7 +562,7 @@ python build_data_run.py
 The structured data is stored under <b>"build"</b>. Next we need to convert data into TF Record.
 
 
-#### * 3. Convert Data into TF Records
+#### 3. Convert Data into TF Records
 
 To make data runnable by training script, we need to convert the images and captions into TF records which are serial image-caption pairs.
 

@@ -562,7 +562,7 @@ python build_data_run.py
 The structured data is stored under <b>"build"</b>
 
 
-#### Convert Data into  TF Records
+#### Convert Data into TF Records
 
 To make data runnable by training script, we need to convert the images and captions into TF records which are serial image-caption pairs.
 
@@ -778,6 +778,8 @@ Run build_data_run.py
 
 
 ### Build TF Records    
+To make data runnable by training script, data need to be converted into TF Record format. Each TF record represents serial pairs of encoded image-caption data. Please see [Convert Data into TF Records](#Convert-Data-into-TF-Records) in Walkthrough section to see details.
+
    
 ## Training a Model
 

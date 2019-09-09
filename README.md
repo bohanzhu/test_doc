@@ -470,12 +470,12 @@ After running the script, the results will be stored in JSON file located at <b>
 
 ### Train your own model Walkthrough
 
-#### The first thing for your training is always about the data. 
+#### 1. The first thing for your training is always about the data. 
 
 Please see [Data Prepartion Section](#Data-Preparation) for details.
 Here to make the demo faster, we use the provided data under <i>data_prepartion/data</i>. Under data directory both annotation files and JPEG images are provided.
 
-#### Clean and Structure your data
+#### 2. Clean and Structure your data
 
 Most time the data you get is always not clean, so cleaning actually takes most of the time for your training. Here we provide the code to do the trick. It cleans up your data by removing proper-noun (See [Clean Data](#Clean-Data) for how it works) and also structures your data into training and testing sets. (See [Build Data](#Build-Data) for how it works)
 
@@ -559,10 +559,10 @@ Run the script:
 python build_data_run.py
 ```
 
-The structured data is stored under <b>"build"</b>
+The structured data is stored under <b>"build"</b>. Next we need to convert data into TF Record.
 
 
-#### Convert Data into TF Records
+#### 3. Convert Data into TF Records
 
 To make data runnable by training script, we need to convert the images and captions into TF records which are serial image-caption pairs.
 
@@ -601,53 +601,16 @@ python build_TF_run.py
 
 After running the script, the TF Records will be stored under <b>"TF"</b>.
 
+#### 4. Run training 
 
 
-Run training 
+#### 5. Run Inference
 
 Get test images
 
-Run Inference
 
-Run Evaluation
+#### 6. Run Evaluation
 
-To demo the Inference for pretrained models, Please go to [Inference](#Inference)
-
-To train your own model for generating caption, Please start with [Data Preparation](#Data-Preparation) 
-
-#### Get Started
-If you installed the packaged locally,
-* Skip the first step and following the rest of steps
-If you installed the packaged using vagrant box,
-* 1. login into vagrant box
-```
-vagrant ssh
-```
-* 2. migrate annotation files that need to clean into project directory.
-
-e.g. data_preparation\data contains demo data to perform NLP cleaning
-
-* 3. navigate to data_preparation directory and open clean_data_run.py file and configure the following setting
-```
-# Field name in annotation file containing metadata
-FIELD_NM = "description_t" 
-e.g. "{
-    "date_t": 1943,
-    "description_t": "Brooch made by internees at the Topaz Internment Camp in Delta, Utah. Residents would gather sea shells found at the camp, bleach them, and then paint and arrange them into brooches and other designs.",
-    ...
-    "
-
-# List of paths (relative or absolute)of directories containing the meta data that needs cleaning
-# This will perform NLP cleaning and remove proper-nouns
-DATA_DIR_LIST = ['data/demo_1']
-
-# or using Loop function to perform NLP on all sub directories under the given directory
-DATA_DIR = 'data'
-
-
-# Path to output directory
-OUTPUT_PATH = "clean"
-```
 
 ## Data Preparation
 Data from any source for caption generating model need following the required pattern.

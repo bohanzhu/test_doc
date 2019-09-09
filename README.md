@@ -515,7 +515,7 @@ cd /vagrant/data_preparation/
 python clean_data_run.py
 ```
 
-After running the script, the clean annotation files will be stored under <b>OUTPUT_PATH</b>.
+After running the script, the clean annotation files will be stored under <b>"clean"</b>.
 
 
 Once we've got the clean data needed. We could now structure our data into the format for training.
@@ -559,10 +559,49 @@ Run the script:
 python build_data_run.py
 ```
 
-The structured data is stored under <b>OUTPUT_PATH</b>
+The structured data is stored under <b>"build"</b>
 
 
 #### Convert Data into  TF Records
+
+To make data runnable by training script, we need to convert the images and captions into TF records which are serial image-caption pairs.
+
+Open <i>/vagrant/data_preparation/build_TF_run.py</i> and configure the following fields:
+
+* 1. TRAIN_SET_IMAGE. Path to directory containing training set images
+* 2. TEST_SET_IMAGE.Path to directory containing testing set images
+* 3. TRAIN_SET_CAPTION. Path to training set annotation file
+* 3. TEST_SET_CAPTION. Path to testing set annotation file
+* 4. OUTPUT_PATH. Path to output directory 
+
+You could also locate the file under the <i> project_directory/data_preparation/build_TF_run.py </i>
+
+
+```
+# Path to directory containing training set images
+TRAIN_SET_IMAGE = "build/train/images"
+# Path to directory containing testing set images
+TEST_SET_IMAGE = "build/test/images"
+# Path to training set annotation file
+TRAIN_SET_CAPTION = "build/train/annotations/annotation.json"
+# Path to testing set annotation file
+TEST_SET_CAPTION = "build/test/annotations/annotation.json"
+
+# Path to output directory
+OUTPUT_PATH = "TF"
+```
+
+Then we need to navigate to build_TF_run located directory and run the script
+
+```
+cd /vagrant/data_preparation/
+
+python build_TF_run.py
+```
+
+After running the script, the TF Records will be stored under <b>"TF"</b>.
+
+
 
 Run training 
 

@@ -226,7 +226,9 @@ TRAIN_PERCENT = 80
 -------------------configuration end here-----------------------------------------------------------------------
 ```
 
+### OS Compatibility
 
+#### Script Adjust
 If you plan to run the script under **Windows OS**, path format with "\\". 
 
 e.g. CHECKPOINT_PATH = "path\\to\\dir\\pretrained_model\\graph.pb"
@@ -238,9 +240,22 @@ e.g. CHECKPOINT_PATH = "path/to/dir/pretrained_model/graph.pb"
 
 You could easily switch between Linux OS and Windows OS by replacing "\\" with "/" or replacing "/" with "\\" .
 
-When using model
+#### Model Adjust
+**When using a model, check the checkpoint file:**
+Here's an example:
+model_checkpoint_path: "/vagrant/models/caption/train/model.ckpt-20"
 
-When building data 
+If you're planning to migrate this model, make sure you adjust the path correctly to prevent the "Not Found" error.
+If you're running the code under Windows OS, you need to adjust the path by changing / with \\.
+
+#### Data Adjust
+**When you run build_data_run.py:** 
+check the annotation file generated in annotation.json. 
+Here's an example in : "file_name": "/vagrant/data_preparation/data/demo_2/128269.jpg"
+If you plan to run **build_TF_run.py** with this data in **Windows OS or if data has been moved somewhere else**. You have to run 
+run **build_data_run.py** under **Windows OS** with the updated configuration and use the new dataset for your purpose to prevent 
+"Not Found" error.
+
 
 ## Walkthrough
 
@@ -337,7 +352,7 @@ So we get the following results printed
   2) a cow standing in a field of grass (p=0.000283)
 ```
 
-caption_inference_run.py has the similar fields to configure. There's slight diference that it can loop over all images under the each directory in the list and generate the captions. Also instead of printing out the results, it creates a JSON file containing of the results generated.
+**caption_inference_run.py** has the similar fields to configure. There's slight diference that it loop over all images under the each directory in the list and generate the captions. Also instead of printing out the results, it creates a JSON file containing of the results generated.
 
 Here's an example of configuration under linux OS (vagrant).
 
@@ -352,7 +367,7 @@ IMAGE_DIR_LIST = ["../../test_image"]
 OUTPUT_PATH = "output/captions.json"
 ```
 
-After running the script, the results will be stored in JSON file located at <b>OUTPUT_PATH</b>.
+After running the script, the results will be stored in JSON file located at <b>output/captions.json</b>.
 
 Feel free to do inference with your own images. However, this model is not perfect for doing inference for all images. 
 
@@ -422,7 +437,7 @@ IMAGE_DIR_LIST = ["../../test_image"]
 OUTPUT_PATH = "output/classifications.json"
 ```
 
-After running the script, the results will be stored in JSON file located at <b>OUTPUT_PATH</b>.
+After running the script, the results will be stored in JSON file located at <b>output/classifications.json</b>.
 
 
 #### 5. Object Detection Inference
@@ -461,12 +476,31 @@ python object_detect_test.py
 Since object detect is GPU usage consuming, it's slower to run it under vagrant box. If you plan to do inference for multiple images,
 it's recommended to run the script locally.
 
+**Notice in vagrant box, gpu acceleration is limited, so for training purpose we use local deployed code pakcage as demo**
+
+In this case we need to exit vagrant box, run code in command line 
+```
+exit
+
+logout
+Connection to 127.0.0.1 closed.
+```
+
+then you run 
+
+```
+cd /path/to/project/dir/inference/object_detect
+
+python object_detect_test.py
+```
+
+
 Here's the result:
 ```
 [{'score': '0.72273505', 'label_text': u'Cattle'}, {'score': '0.3564907', 'label_text': u'Animal'}, {'score': '0.34420493', 'label_text': u'Furniture'}]
 
 ```
-similar to caption_inference_run.py, object_detect_run.py also stored generated results in JSON File.
+similar to caption_inference_run.py, **object_detect_run.py** also stored generated results in JSON File.
 
 Here's an example of configuration under linux OS (vagrant).
 
@@ -680,7 +714,7 @@ python caption_train_run.py
 
 After running the script, the model file will be stored under <b>"models/caption/train"</b>.
 Under the model directory you will find model files including:
-* 1.checkpoint file containing path to the model. **The Model path is absolute, if you p**
+* 1.checkpoint file containing path to the model. **If you plan to migrate your model or run the code under different OS environment, see [Model Adjust](#Model-Adjust)**
 * 2. graph.pbtxt
 * 3. model.ckpt-n.data-00000-of-00001
 * 4. model.ckpt-n.index

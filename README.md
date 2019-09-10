@@ -621,16 +621,16 @@ You could also locate the file under the <i> project_directory/train/caption_tra
 
 ```
 # Path to directory containing the saved training TF files
-DATA_DIR = "..\\data_preparation\\TF"
+DATA_DIR = "../data_preparation/TF"
 
 # Path to dictionary file generated through TF build script
-VOCAB_FILE = "..\\data_preparation\\TF\\word_count.txt"
+VOCAB_FILE = "../data_preparation/TF/word_count.txt"
 
 # Path to Inception checkpoint file.
-INCEPTION_CHECKPOINT = "..\\models\\inception_v3.ckpt"
+INCEPTION_CHECKPOINT = "../models/inception_v3.ckpt"
 
 # Directory to save or restore the training process of trained model.
-MODEL_DIR = "..\\models\\caption"
+MODEL_DIR = "../models/caption"
 
 # Number of Steps to train
 TRAIN_STEPS = 20
@@ -641,7 +641,7 @@ GPU_DEVICE = 0
 Here we just run 20 steps (which can do nothing for performance) to create a demo model as example. However you could continue the training by running the script (unless you change MODEL_DIR). 
 
 
-**Notice here in vagrant box, gpu acceleration is limited, so for training purpose we use local deployed code pakcage as demo**
+**Notice in vagrant box, gpu acceleration is limited, so for training purpose we use local deployed code pakcage as demo**
 
 In this case we need to exit vagrant box, run code in command line 
 ```
@@ -654,7 +654,7 @@ Connection to 127.0.0.1 closed.
 then you run 
 
 ```
-cd \path\to\\project\dir\train
+cd /path/to/project/dir/train
 
 python caption_train_run.py
 ```
@@ -678,7 +678,8 @@ For NLG models, there're a few [metrics](https://medium.com/explorations-in-lang
 
 In our code package we user [perplexity](https://en.wikipedia.org/wiki/Perplexity) to measure the performance.
 
-Here instead of using the model we just trained since we just trained it for 20 steps, we use  [ptm-im2txt-incv3-mlib-cleaned-3m](https://sheeko.org/downloads/ptm-im2txt-incv3-mlib-cleaned-3m.zip)  model instead for evaluation.  
+Here instead of using the model we just trained since we just trained it for 20 steps, we use  [ptm-im2txt-incv3-mlib-cleaned-3m](https://sheeko.org/downloads/ptm-im2txt-incv3-mlib-cleaned-3m.zip)  model instead for evaluation. Download the models under 
+/path/to/project/dir/models/caption
 
 
 Open <i>/vagrant/evaluation/caption_eval_run.py</i> and configure the following fields:
@@ -692,16 +693,16 @@ You could also locate the file under the <i> project_directory/evaluation/captio
 
 ```
 # Path to directory containing the saved evaluate TF files
-DATA_DIR = "..\\data_preparation\\TF"
+DATA_DIR = "../data_preparation/TF"
 
 # Directory containing model files to evaluate.
-MODEL_DIR = "..\\"
+MODEL_DIR = "../models/caption/mscoco2017_3M/train/"
 
 # Select gpu device to evaluate your model, use integer number to refer to the device: e.g. 0 -> gpu_0
 GPU_DEVICE = 0
 ```
 
-**Notice here in vagrant box, gpu acceleration is limited, so for evaluation purpose we use local deployed code pakcage as demo**
+**Notice in vagrant box, gpu acceleration is limited, so for evaluation purpose we use local deployed code pakcage as demo**
 
 In this case we need to exit vagrant box (if you are vagrant box), run code in command line 
 ```
@@ -714,7 +715,7 @@ Connection to 127.0.0.1 closed.
 then you run 
 
 ```
-cd \path\to\\project\dir\evaluation
+cd /path/to/project/dir/evaluation
 
 python caption_eval_run.py
 ```

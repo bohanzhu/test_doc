@@ -240,7 +240,7 @@ You could easily switch between Linux OS and Windows OS by replacing "\\" with "
 
 When using model
 
-When building data
+When building data 
 
 ## Walkthrough
 
@@ -264,10 +264,25 @@ Please see [configuration](#Configure-File) for details.
 
 See our [pretrained models](#Sheeko-Pretrained-Models-Resource) website to download our pretrained models. 
 
-In our walkthrough we use the [ptm-im2txt-incv3-mlib-cleaned-3m](https://sheeko.org/downloads/ptm-im2txt-incv3-mlib-cleaned-3m.zip) which is trained on MSCOCO dataset (http://cocodataset.org) with 3 million steps.
+In our walkthrough 
+For caption inference we use the [ptm-im2txt-incv3-mlib-cleaned-3m](https://sheeko.org/downloads/ptm-im2txt-incv3-mlib-cleaned-3m.zip) which is trained on MSCOCO dataset (http://cocodataset.org) with 3 million steps.
 
 Download models under /path/to/project/dir/models/caption
 
+For classification:
+Here's the resource you could download the **models and labels**
+https://github.com/googlecodelabs/nest-tensorflow/tree/master/tmp/imagenet
+
+Download models under /path/to/project/dir/models/labels
+
+For object detection:
+Here's the resource you could download the **models and labels**
+https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
+https://github.com/tensorflow/models/tree/master/research/object_detection/data
+
+In our demo we use **faster_rcnn_inception_resnet_v2_atrous_oid_2018_01_28 and oid_bbox_trainable_label_map.pbtxt**
+
+Download models under /path/to/project/dir/models/labels
 
 #### 2. Next let's get the test images for inference. 
 
@@ -348,7 +363,6 @@ the result generated says it's a bird standing on the top of the wooden branch.
 
 #### 4. Classification Inference
 
-https://github.com/googlecodelabs/nest-tensorflow/tree/master/tmp/imagenet
 
 Now let's do the the classification labels inference.
 

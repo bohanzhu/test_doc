@@ -663,7 +663,7 @@ python caption_train_run.py
 
 After running the script, the model file will be stored under <b>"models/caption/train"</b>.
 Under the model directory you will find model files including:
-* 1.<bcheckpoint file</b> which contains path to the model
+* 1.checkpoint file containing path to the model. **The Model path is absolute, if you p**
 * 2. graph.pbtxt
 * 3. model.ckpt-n.data-00000-of-00001
 * 4. model.ckpt-n.index

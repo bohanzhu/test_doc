@@ -907,6 +907,13 @@ To make data runnable by training script, data need to be converted into TF Reco
 
    
 ## Training a Model
+Our code package provides the code to train your customized model for generating captions. 
+
+Here're the keys for getting a good models: **1). Data 2). Steps to train your model**
+
+Data quality and labels in dictionary decide what your model finally outout. Steps of training will decide whether your model will be underfitted or overfitted. Unfortunately here's no tutorial telling you how many steps you need to configure for getting that right point since your model . In our experience from [im2txt](https://github.com/tensorflow/models/tree/master/research/im2txt), 3 million steps is getting the good model for MSCOCO data.
+
+GPU with higher memory can accelerate your training 
 
 ### Initial Training
     

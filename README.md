@@ -939,25 +939,20 @@ In our code package we use [perplexity](https://en.wikipedia.org/wiki/Perplexity
 ## Inference
 
 ### Image Caption
-caption model translates given JPEG image into natural language text. 
+Caption model translates given JPEG image into natural language text. 
 
 ### Image Classification
 Classification model translates given JPEG image into single label out of [1000 classes](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a)
-Inception v3 is one of the [image classification models](https://github.com/tensorflow/models/tree/master/research/inception)
+
+You could find more information about [image classification models](https://github.com/tensorflow/models/tree/master/research/inception)
 
 ### Object Detection
- Object Detection model identifies the objects in the image. You could find models [here](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
+Object Detection model identifies the objects in the given JPEG image. You could find models [here](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
 
 
- 
 ## Sheeko Pretrained Models Resource
 This project provides [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/) for generating captions.
 Models with description are available for downloading. It's highly recommended to try the downloaded model in [Inference](#Inference) to test the performance.
 
-## Data built in linux environment could not be used in Windows, you have to run data build in windows environment to build the format for windows
-## Installation script implementation for windows and linux (linux run installation.sh, windows run installaation_win.sh)
-## GPU Use (run locally, specify which gpu)
-## Metadata field (example of specifing metadata field and image id for cleaning, data build)
-## Model Migration (clear absolute path to make relative)
-## Provide resources downloading inception v3 model, classified label model and object detect model
+
 

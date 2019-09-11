@@ -909,28 +909,46 @@ To make data runnable by training script, data need to be converted into TF Reco
 ## Training a Model
 Our code package provides the code to train your customized model for generating captions. 
 
+### Keys to get a good model
 Here're the keys for getting a good models: **1). Data 2). Steps to train your model**
 
-Data quality and labels in dictionary decide what your model finally outout. Steps of training will decide whether your model will be underfitted or overfitted. Unfortunately here's no tutorial telling you how many steps you need to configure for getting that right point since your model . In our experience from [im2txt](https://github.com/tensorflow/models/tree/master/research/im2txt), 3 million steps is getting the good model for MSCOCO data.
+Data quality and labels in dictionary decide what your model finally outouts.  
 
-GPU with higher memory can accelerate your training 
+Total number of training steps will decide whether your model will be underfitted or overfitted. Unfortunately here's no tutorial telling you how many steps you need to configure for getting that right point since that depends on your data. In our experience from [im2txt](https://github.com/tensorflow/models/tree/master/research/im2txt), 3 million steps is getting the good model for MSCOCO data.
+
+### Accelerate your training
+GPU with higher memory can accelerate your training. This code package doesn't support multi-GPU training. However, you could do parallel training with multi-GPU. Specify the GPU by assigning the index of GPU. e.g. 1
 
 ### Initial Training
+To run the training, an Inception model is required. You could download [Inception v3](http://download.tensorflow.org/models/inception_v3_2016_08_28.tar.gz) , See [training walkthrough](#Train-your-own-model-Walkthrough) for details.
     
 ### Fine Tune the im2txt Model 
-## Evaluation Caption Model
+You could transfer your training with new dataset. The output will follow the new dataset's pattern. Convert new dataset into TF Records
+then replace the **DATA_DIR** with the TF Records' path.
 
+## Evaluation Caption Model
+Code package provides evaluation script for caption model. 
 ### Evaluation Caption Model
 ##### Metric
-Caption: perplexity per word
+caption model lelongs to NLG model.
+
+there're a few [metrics](https://medium.com/explorations-in-language-and-learning/metrics-for-nlg-evaluation-c89b6a781054) for evaluation.
+
+In our code package we user [perplexity](https://en.wikipedia.org/wiki/Perplexity) to measure the performance.
 
 ## Inference
 
 ### Image Caption
- 
+caption model translates given JPEG image into natural language text. 
+
 ### Image Classification
- 
+Classification model translates given JPEG image into single label out of [1000 classes](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a)
+Inception v3 is one of the [image classification models](https://github.com/tensorflow/models/tree/master/research/inception)
+
 ### Object Detection
+ Object Detection model identifies the objects in the image. You could find models [here](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
+
+
  
 ## Sheeko Pretrained Models Resource
 This project provides [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/) for generating captions.

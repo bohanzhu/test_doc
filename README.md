@@ -729,7 +729,7 @@ Now you could do the same thing as [Caption Inference](#Caption-Inference)
 
 For NLG models, there're a few [metrics](https://medium.com/explorations-in-language-and-learning/metrics-for-nlg-evaluation-c89b6a781054) for evaluation.
 
-In our code package we user [perplexity](https://en.wikipedia.org/wiki/Perplexity) to measure the performance.
+In our code package we use [perplexity](https://en.wikipedia.org/wiki/Perplexity) to measure the performance.
 
 Here instead of using the model we just trained since we just trained it for 20 steps, we use  [ptm-im2txt-incv3-mlib-cleaned-3m](https://sheeko.org/downloads/ptm-im2txt-incv3-mlib-cleaned-3m.zip)  model instead for evaluation. Download the models under 
 /path/to/project/dir/models/caption
@@ -928,13 +928,13 @@ then replace the **DATA_DIR** with the TF Records' path.
 
 ## Evaluation Caption Model
 Code package provides evaluation script for caption model. 
-### Evaluation Caption Model
-##### Metric
-caption model lelongs to NLG model.
 
-there're a few [metrics](https://medium.com/explorations-in-language-and-learning/metrics-for-nlg-evaluation-c89b6a781054) for evaluation.
-
-In our code package we user [perplexity](https://en.wikipedia.org/wiki/Perplexity) to measure the performance.
+### Metric
+Caption model is Natural-language generation model(NLG model). 
+For NLG model, we use [metrics](https://medium.com/explorations-in-language-and-learning/metrics-for-nlg-evaluation-c89b6a781054) 
+ measure performance.
+ 
+In our code package we use [perplexity](https://en.wikipedia.org/wiki/Perplexity)
 
 ## Inference
 

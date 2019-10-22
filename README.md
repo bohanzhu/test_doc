@@ -936,6 +936,8 @@ For NLG model, see [metrics](https://medium.com/explorations-in-language-and-lea
  
 In our code package we use [perplexity](https://en.wikipedia.org/wiki/Perplexity) as our metric to measure model's performance
 
+Go to [Evaluation Walkthrough](#Run-Evaluation) for code walkthrough
+
 ## Inference
 
 ### Image Caption
@@ -948,6 +950,8 @@ You could find more information about [image classification models](https://gith
 
 ### Object Detection
 Object Detection model identifies the objects in the given JPEG image. You could find models [here](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
+
+Please see [Inference Walkthrough](#Inference-Walkthrough) for code walkthrough
 
 
 ## Sheeko Pretrained Models Resource

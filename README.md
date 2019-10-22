@@ -931,10 +931,10 @@ Code package provides evaluation script for caption model.
 
 ### Metric
 Caption model is Natural-language generation model(NLG model). 
-For NLG model, we use [metrics](https://medium.com/explorations-in-language-and-learning/metrics-for-nlg-evaluation-c89b6a781054) 
- measure performance.
+For NLG model, see [metrics](https://medium.com/explorations-in-language-and-learning/metrics-for-nlg-evaluation-c89b6a781054) 
+ to measure performance.
  
-In our code package we use [perplexity](https://en.wikipedia.org/wiki/Perplexity)
+In our code package we use [perplexity](https://en.wikipedia.org/wiki/Perplexity) as our metric to measure model's performance
 
 ## Inference
 
@@ -952,7 +952,7 @@ Object Detection model identifies the objects in the given JPEG image. You could
 
 ## Sheeko Pretrained Models Resource
 This project provides [Sheeko Pretrained Models Resource](https://sheeko.org/pre-trained-models/) for generating captions.
-Models with description are available for downloading. It's highly recommended to try the downloaded model in [Inference](#Inference) to test the performance.
+Models with description are available for downloading. It's highly recommended to try the downloaded model in [Inference Walkthrough](#Inference-Walkthrough) to test the performance.
 
 
 
